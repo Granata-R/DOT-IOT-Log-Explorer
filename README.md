@@ -27,35 +27,35 @@ By opening any .n file of the experiment into Tint, it is possible to retrieve s
 The result is a quite large .txt file that contains the basic time series about the experiment. This .txt file is the first one that must be loaded in the main GUI.
 
 ### Extracting spikes
-For our personal preprocessing, we preferred to not rely on the manual clustering with Tint. Instead, we preferred using some more advanced spike sorters such as KiloSort.
-In order to use these external sorters, you must first install them on your local workstation. Then, provided that you have Python installed (see requirements), you can use the "extract..." file that is a Jupyter Notebook which automatically launches the sorting. The sorting can be made only if a .bin file is given to the notebook. Otherwise, it is not possible to load the spikes.
+For our preprocessing, we opted not to rely on manual clustering with Tint. Instead, we preferred utilizing more advanced spike sorters such as KiloSort. To utilize these external sorters, you need to first install them on your local workstation. Then, assuming you have Python installed (see requirements), you can utilize the "extract..." file, which is a Jupyter Notebook that automatically initiates the sorting process. Sorting can only occur if a .bin file is provided to the notebook; otherwise, it's not possible to load the spikes.
 
-Given that you meet all the requirements, just execute each block of the Jupyter Notebook in order to launch the sorting. NB: the second block prompts the user with a dialog to choose the .bin file.
-The sorted data will be saved in a subfolder placed in the folder of the .bin file. 
+If you meet all the requirements, simply execute each block of the Jupyter Notebook to initiate the sorting. Note: the second block prompts the user with a dialog to choose the .bin file. The sorted data will be saved in a subfolder within the .bin file's directory.
 
-A second step is then needed.
-After you have performed the sorting of the data, you want to do some manual clustering through Phy. As the sorting was carried out by SpikeInterface, the format of the output files will be standardized no matter which sorter you use. 
-Once you are done with sorting and manual clustering (make sure to save in Phy), the second step involves organizing the spiking information in a form that MATLAB likes. To do so, you can simply do this via a second Jupyter Notebook, called "", that does two things: 
-1) it generates .mat files containing raster information of the spiking activity
-2) it allows previewing the coordinate information vs. the spike information for place cell analysis.
-   this latter option is just a preview. In MATLAB, it is possible to use the dedicated module "Unit Explorer" for a deeper analysis.
+A second step is then necessary. After sorting the data, you'll want to conduct manual clustering through Phy. Since the sorting was performed by SpikeInterface, the format of the output files will be standardized regardless of the sorter used. Once sorting and manual clustering are complete (ensure to save in Phy), the next step involves organizing the spiking information in a format compatible with MATLAB. This can be achieved through a second Jupyter Notebook, which performs two tasks:
 
-Again, this second notebook is pretty straightforward and can be easily executed block by block.
-Similarly to the first notebook, it prompts the user with a dialog to select the desired file upon executing the second block.
+    Generates .mat files containing raster information of the spiking activity.
+    Allows previewing the coordinate information versus the spike information for place cell analysis. This latter option serves as a preview. In MATLAB, the dedicated module "Unit Explorer" enables deeper analysis.
+
+Again, this second notebook is straightforward and can be executed block by block. Similar to the first notebook, it prompts the user with a dialog to select the desired file upon executing the second block.
 
 ### Extracting LFPs
 To extract the LFPs for each channel, a third Jupyter notebook can be used.
 This notebook, called "", requires the .bin file. Its output is a folder called "LFP" that contains .mat matrices with the LFPs.
 
 ## Explore preprocessed data in MATLAB
-Once you have preprocessed the information you are interested in, you want to explore it in DOT IOT Log Explorer, which can be run through MATLAB through AppDesigner or by simply running the command "DOT_IOT_Log_Explorer" in the command window.
+Once you've completed preprocessing the relevant information, you can delve into it using DOT IOT Log Explorer, which is accessible via MATLAB either through AppDesigner or by directly executing the command "DOT_IOT_Log_Explorer" in the command window.
 
-Thereupon, the main GUI opens. On the top left, by clicking on the Load button, you can choose the .txt file containing your information. Please notice that on the right of the open button there are several check buttons. the most important ones in this phase are the LFPs and Spikes, by which you can decide if importing those information as well. Please make sure that the LFP file is placed in the same folder as the desired txt file. if spikes have been extracted, please keep the same folder structure. indeed, parent folders contain the information from Phy that can be retrieved if needed.
+Upon launching, the main GUI appears. At the top left, you'll find the Load button, allowing you to select the .txt file containing your data. Take note of the check buttons to the right of the open button. Among them, the most crucial ones during this phase are LFPs and Spikes, enabling you to choose whether to import this additional information. Ensure that the LFP file is stored in the same folder as the desired .txt file. If spikes have been extracted, maintain the same folder structure, as parent folders contain information from Phy that may be necessary.
 
-If the GUI loads correctly, you should have an interface like this.
-the first column represents actions that the user can do. these encompass selecting a time window or deciding which behavioral epochs they want to use. most of these parameters are self-explanatory.
-the second column represents the visualization output. here, you can browse in default conditions the selected trace, which is by default the EEG or one of the channel LFPs if you selected it. this axes are also the axes used for showing different comodulation metrics and signal components. see: comodulation for this.
+If the GUI loads correctly, you'll see an interface resembling this. The first column represents user actions, such as selecting a time window or determining which behavioral epochs to utilize. Most of these parameters are self-explanatory. The second column displays visualization output. Here, you can view the default trace, typically EEG or one of the channel LFPs if selected. These axes also display various comodulation metrics and signal components.
 
-immediately below the EEG axis, there is the unit axis. it will show a raster plot showing the units in time. more specific metrics can be explored via the units module.
+Directly below the EEG axis is the unit axis, showcasing a raster plot depicting units over time. Further specific metrics can be explored via the units module.
 
-still below, there is the axis which contains the information regarding behavioral epochs. so far, for "behavior" we can mean high speed; manual unwound epochs (for example, object exploration, or interaction with a conspecific, or a particular stereotypy in the animal).
+Continuing downward, you'll find the axis containing information regarding behavioral epochs. Currently, "behavior" encompasses high speed, manual unwound epochs (e.g., object exploration, interaction with a conspecific, or specific stereotypic behaviors in the animal), and sleep epochs.
+
+Finally, below this is the spectrogram.
+
+On the right column, you'll find some initial result outputs related to the explored data based on the selected time window and behavioral epochs. These results are presented using two pairs of colors: yellow versus magenta (for defining the selected time window versus all other times) and green versus red (for defining behavior "yes" versus behavior "no"). Bars are displayed to emphasize the activity of single neurons, and periodograms can be computed based on these filters.
+
+## Saving the data
+The analysis can be conducted at different levels using the various modules. Regardless, to save the file, you need to click on the orange "Save" button after specifying the mouse and test IDs, which will generate the filename for the output file. The output file is stored in the Results folder. If multiple analyses are performed on the same file, with the same time window/behavior filters, then the filename will include specific labels just before the format. These labels might appear as "FILENAME_"[Spg][Mov][Sleep][Pac][Units]".mat" if the analysis includes spectrum, movement, sleep, comodulation, and single units.
