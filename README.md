@@ -1,21 +1,22 @@
 # DOT-IOT-Log-Explorer
 
+DOT-IOT-Log-Explorer is a Python/MATLAB software for broad analysis of electrophysiological data from freely behaving animals. For the moment the workflow is limited to data recored through the Axona DacqUSB recording system. 
+In short, DOT-IOT-Log-Explorer can be used for broad visualization and quantitative analysis of: spectral properties, movement patterns, sleep patterns, neuronal activity, comodulation between theta and gamma components of the EEG/LFP. A the core of the software meaning there is the spectral analysis under specific behavioral epochs. An inner feature of DOT-IOT Log Explorer is an "unwinding" option, which allows the user to manually define the behaviorally relevant epochs. 
+
+DOT-IOT-Log-Explorer is made of around 20k lines of custom code. Furthermore, it leverages compatibility with state-of-the-art computational tools in systems neuroscience.
+These include SpikeInterface (for standardized data extraction), Kilosort (for spike sorting), AccuSleep (for semi-automated sleep segmentation), ANY-maze (for manual review of behavior through key logs.) 
+
+## Credits
+The software was created by Rocco Granata with inputs from Diletta Cavezza.
+The recipient lab is the neuropsychopharmacology laboratory of Dr. Elvira De Leonibus.
+
 ## About this guide
-This guide has been written by the author of DOT-IOT Log Explorer with the intent to show potential users its capabilities, and to guide current users as well.
+This guide has been written by Rocco G. with the intent to show potential users its capabilities, and to guide current users as well.
 As of march 26, the software is becoming quite big. therefore it's difficult to me to explain the meaning of each single button. i will probably do this in the future, updating this guide step by step. 
 Also, I will make sure (but this is just a detail!) to put tips for the user while the cursor is above each button.
 
 The three macro sections about the guide are about Preprocessing, Exploring the data in MATLAB, and averaging the results.
 the preprocessing is made in python mostly. the second part describes how to use the main GUIs I have created to explore and save tailored analyses. finally, i describe how to verage the results from single experiments belonging to different groups, as described in the "averaging the results".
-
-## Credits
-The software was created by Rocco Granata with the inputs of Diletta Cavezza.
-
-DOT-IOT-Log-Explorer is software for broad analysis of electrophysiological data. In short, it allows performing an analysis of spectral properties; single units (through external sorters, such as KiloSort, see:); comodulation between theta and gamma components of the EEG/LFP; inner feature of unwinding option for object exploration/epoch selection, with compatibility with the popular ANY-maze software; analysis of sleep segmentation (through AccuSleep, see).
-
-The software has been designed to analyze data extracted from Tint + data extracted from .bin sources through SpikeInterface (see...).
-
-This guide has the meaning of being a general overview of the program use. It is not detailed in all the specific handles for the moment.
 
 ## Screenshots of the main GUIs
 
