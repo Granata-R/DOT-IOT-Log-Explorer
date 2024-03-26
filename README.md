@@ -1,9 +1,10 @@
 # DOT-IOT-Log-Explorer
 
-## Introduction
 DOT-IOT-Log-Explorer is software for broad analysis of electrophysiological data. In short, it allows performing an analysis of spectral properties; single units (through external sorters, such as KiloSort, see:); comodulation between theta and gamma components of the EEG/LFP; inner feature of unwinding option for object exploration/epoch selection, with compatibility with the popular ANY-maze software; analysis of sleep segmentation (through AccuSleep, see).
 
 The software has been designed to analyze data extracted from Tint + data extracted from .bin sources through SpikeInterface (see...).
+
+This guide has the meaning of being a general overview of the program use. It is not detailed in all the specific handles for the moment.
 
 ## Screenshots of the main GUIs
 
