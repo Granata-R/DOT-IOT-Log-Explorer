@@ -1,5 +1,16 @@
 # DOT-IOT-Log-Explorer
 
+## About this guide
+This guide has been written by the author of DOT-IOT Log Explorer with the intent to show potential users its capabilities, and to guide current users as well.
+As of march 26, the software is becoming quite big. therefore it's difficult to me to explain the meaning of each single button. i will probably do this in the future, updating this guide step by step. 
+Also, I will make sure (but this is just a detail!) to put tips for the user while the cursor is above each button.
+
+The three macro sections about the guide are about Preprocessing, Exploring the data in MATLAB, and averaging the results.
+the preprocessing is made in python mostly. the second part describes how to use the main GUIs I have created to explore and save tailored analyses. finally, i describe how to verage the results from single experiments belonging to different groups, as described in the "averaging the results".
+
+## Credits
+The software was created by Rocco Granata with the inputs of Diletta Cavezza.
+
 DOT-IOT-Log-Explorer is software for broad analysis of electrophysiological data. In short, it allows performing an analysis of spectral properties; single units (through external sorters, such as KiloSort, see:); comodulation between theta and gamma components of the EEG/LFP; inner feature of unwinding option for object exploration/epoch selection, with compatibility with the popular ANY-maze software; analysis of sleep segmentation (through AccuSleep, see).
 
 The software has been designed to analyze data extracted from Tint + data extracted from .bin sources through SpikeInterface (see...).
@@ -96,9 +107,18 @@ the comodulogram can be computed as well upon filtering the original trace accor
 The rightmost panel are dedicated to the PAC per second. As the name suggests, this code computes these metrics for each second of the trace. The result is a bar that can be visualized in the original main GUI, by selecting the appropriate radio buttons.
 The PAC per second metric is also endowed by a shuffling control. You can decide how many times you want to shuffle. Based on the shuffling repetitions a surrogate PAC-per-second is generated and subtracted statistically to the raw data.
 
-On the right mostpanels, you can see the bars showing the mean raw or filtered scores during time or behavioral epochs.
+On the right mostpanels, you can see the bars showing the mean raw or filtered scores during time or behavioral epochs. 
 
+## Unit explorer module
+The unit explorer module is still in development. For the moment, it allows the computation of the distributions of the spiking activity of single units. On the right panel, the place cell activity in space can be explored with different methods.
 
+## Unwinding module
+The unwinding for object exploration, or for any type of behavior the user wants to segment, can be done by clicking on the Unwind button in the main GUI. 
+This button launches a dialog which basically is a time-stamped keylogger. Through this dialog, by pressing the keys 1 2 3 7 8 9 according to e.g, exloration of object 1 2 3 7 8 9, the user can create a vector with the object exploration epochs. after saving it, the output can be saved in a subfolder of the original text file. Then, it can be loaded in the main GUI by clicking this button.
 
-## Saving the data
+### Exploring single keys
+Once you have perfored your unwinding, you can see what happens to the periodogram while the animal was exploring all object, or a single object (just use the dropdown menu). furthermore you can limit the periodogram and unit computation to the first n seconds of exploration.
+finally, since precise unwinding is difficult and you could not be as fast as you should, you can also shift everything on the left of n seconds usig this button. You can also move everything on the right if you want. it might be useful for "anticipatory" behavior!
+
+## Saving the module analysis
 The analysis can be conducted at different levels using the various modules. Regardless, to save the file, you need to click on the orange "Save" button after specifying the mouse and test IDs, which will generate the filename for the output file. The output file is stored in the Results folder. If multiple analyses are performed on the same file, with the same time window/behavior filters, then the filename will include specific labels just before the format. These labels might appear as "FILENAME_"[Spg][Mov][Sleep][Pac][Units]".mat" if the analysis includes spectrum, movement, sleep, comodulation, and single units.
