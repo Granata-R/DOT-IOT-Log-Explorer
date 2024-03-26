@@ -42,7 +42,8 @@ Again, this second notebook is straightforward and can be executed block by bloc
 To extract the LFPs for each channel, a third Jupyter notebook can be used.
 This notebook, called "", requires the .bin file. Its output is a folder called "LFP" that contains .mat matrices with the LFPs.
 
-## Explore preprocessed data in MATLAB
+# Explore preprocessed data in MATLAB
+## DOT-IOT Log Explorer (main GUI)
 Once you've completed preprocessing the relevant information, you can delve into it using DOT IOT Log Explorer, which is accessible via MATLAB either through AppDesigner or by directly executing the command "DOT_IOT_Log_Explorer" in the command window.
 
 Upon launching, the main GUI appears. At the top left, you'll find the Load button, allowing you to select the .txt file containing your data. Take note of the check buttons to the right of the open button. Among them, the most crucial ones during this phase are LFPs and Spikes, enabling you to choose whether to import this additional information. Ensure that the LFP file is stored in the same folder as the desired .txt file. If spikes have been extracted, maintain the same folder structure, as parent folders contain information from Phy that may be necessary.
@@ -56,6 +57,30 @@ Continuing downward, you'll find the axis containing information regarding behav
 Finally, below this is the spectrogram.
 
 On the right column, you'll find some initial result outputs related to the explored data based on the selected time window and behavioral epochs. These results are presented using two pairs of colors: yellow versus magenta (for defining the selected time window versus all other times) and green versus red (for defining behavior "yes" versus behavior "no"). Bars are displayed to emphasize the activity of single neurons, and periodograms can be computed based on these filters.
+
+## Analysis of movement and sleep patterns
+Bly clicking on the "Movement and sleep" button in the main GUI, a submodule for this analysis is launched.
+The module is composed of two tabs for movement and sleep, respectively. 
+
+### Movement
+Regarding movement, an overview of the speed time series and cumulative distance are provided. The module inherits the epoch filtering from main GUI: accordingly, it shows the distribution of the speed during these epochs alongside descriptive metrics in the form of box charts. 
+
+The speed time series and the cumulative distance can be color coded on the basis of hard thresholds applied to the speed vector (and its accelleration). These hard thresholds span both in terms of value (cm/s or cm/s^2) and time and are
+1) Movement (i.e., everything that is not immobility) [green]
+2) Running (sustained high-velocity epochs) [red]
+3) Burst (sustained high-accelleration epochs) [blue]
+These hard thresholds can be applied to the user. The figure shows an example of color coded time series and of a fraction of it.
+
+I added also a section for calculating thigmotaxis and for calculating an index of the head turning angles.
+
+### Sleep
+The software incorporates an edited version of the popular software AccuSleep (see:) for sleep segmentation.
+Briefly, it allows to automatically assign the movement epochs (as defined by the user in the Movement tab) to wakefulness. Note that we use a setting by which the immobility is immobility only if it lasts only 1 second. therefore, artifacts due to the natural movement are in part excluded.
+
+Please read the AccuSleep documentation for seeing how to use it.
+Once the data is saved, this edited version generates a folder (in the same folder of the original .txt file) where the sleep labels are saved. thereupon they can be loaded by the main GUI for displaying them and to check, for example, the unit behavior during wakefulness, REM, NREM.
+
+
 
 ## Saving the data
 The analysis can be conducted at different levels using the various modules. Regardless, to save the file, you need to click on the orange "Save" button after specifying the mouse and test IDs, which will generate the filename for the output file. The output file is stored in the Results folder. If multiple analyses are performed on the same file, with the same time window/behavior filters, then the filename will include specific labels just before the format. These labels might appear as "FILENAME_"[Spg][Mov][Sleep][Pac][Units]".mat" if the analysis includes spectrum, movement, sleep, comodulation, and single units.
