@@ -33,8 +33,8 @@ If you meet all the requirements, simply execute each block of the Jupyter Noteb
 
 A second step is then necessary. After sorting the data, you'll want to conduct manual clustering through Phy. Since the sorting was performed by SpikeInterface, the format of the output files will be standardized regardless of the sorter used. Once sorting and manual clustering are complete (ensure to save in Phy), the next step involves organizing the spiking information in a format compatible with MATLAB. This can be achieved through a second Jupyter Notebook, which performs two tasks:
 
-    Generates .mat files containing raster information of the spiking activity.
-    Allows previewing the coordinate information versus the spike information for place cell analysis. This latter option serves as a preview. In MATLAB, the dedicated module "Unit Explorer" enables deeper analysis.
+1) Generates .mat files containing raster information of the spiking activity.
+2) Allows previewing the coordinate information versus the spike information for place cell analysis. This latter option serves as a preview. In MATLAB, the dedicated module "Unit Explorer" enables deeper analysis.
 
 Again, this second notebook is straightforward and can be executed block by block. Similar to the first notebook, it prompts the user with a dialog to select the desired file upon executing the second block.
 
