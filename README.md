@@ -1,23 +1,22 @@
 # DOT-IOT-Log-Explorer
 
-DOT-IOT-Log-Explorer is a Python/MATLAB software for broad analysis of electrophysiological data from freely behaving animals. For the moment the workflow is limited to data recored through the Axona DacqUSB recording system. 
-In short, DOT-IOT-Log-Explorer can be used for broad visualization and quantitative analysis of: spectral properties, movement patterns, sleep patterns, neuronal activity, comodulation between theta and gamma components of the EEG/LFP. A the core of the software meaning there is the spectral analysis under specific behavioral epochs. An inner feature of DOT-IOT Log Explorer is an "unwinding" option, which allows the user to manually define the behaviorally relevant epochs. 
-
-DOT-IOT-Log-Explorer is made of around 20k lines of custom code. Furthermore, it leverages compatibility with state-of-the-art computational tools in systems neuroscience.
-These include SpikeInterface (for standardized data extraction), Kilosort (for spike sorting), AccuSleep (for semi-automated sleep segmentation), ANY-maze (for manual review of behavior through key logs.) 
-
+DOT-IOT-Log-Explorer is a Python/MATLAB software for broad analysis of electrophysiological data from freely behaving animals. For the moment the workflow is limited to data recorded through the Axona DacqUSB recording system. 
+In short, DOT-IOT-Log-Explorer can be used for broad visualization and quantitative analysis of spectral properties, movement patterns, sleep patterns, neuronal activity, comodulation between theta and gamma components of the EEG/LFP. At the core of the software there is the spectral and unit analysis under specific behavioral epochs. One inner feature of DOT-IOT Log Explorer is an "unwinding" option, which allows the user to manually define the behaviorally relevant epochs. 
+DOT-IOT-Log-Explorer is made of around 20k lines of custom Python/MATLAB code. It leverages compatibility with state-of-the-art computational tools in systems neuroscience. These include SpikeInterface (for standardized data extraction), Kilosort (for spike sorting), AccuSleep (for semi-automated sleep segmentation), ANY-maze (for manual review of behavior through key logs.) 
+Some of them are not free/not easy to use. I have made sure to provide all the information in the Requirements section.
 ## Credits
 The software was created by Rocco Granata with inputs from Diletta Cavezza.
 The recipient lab is the neuropsychopharmacology laboratory of Dr. Elvira De Leonibus.
-
+## Requirements.
+Our workflow has been tested on Windows only, though the entire workflow should work on other operative systems by doing small changes.
+Python (Jupyter) is always needed to preprocess the recording files. Since the pipeline assumes to preprocessing the recording files via SpikeInterface (always needed as well), please use the SpikeInterface installation guide to get Python + SpikeInterface.
 ## About this guide
-This guide has been written by Rocco G. with the intent to show potential users its capabilities, and to guide current users as well.
-As of march 26, the software is becoming quite big. therefore it's difficult to me to explain the meaning of each single button. i will probably do this in the future, updating this guide step by step. 
-Also, I will make sure (but this is just a detail!) to put tips for the user while the cursor is above each button.
-
-The three macro sections about the guide are about Preprocessing, Exploring the data in MATLAB, and averaging the results.
-the preprocessing is made in python mostly. the second part describes how to use the main GUIs I have created to explore and save tailored analyses. finally, i describe how to verage the results from single experiments belonging to different groups, as described in the "averaging the results".
-
+This guide has been written by Rocco Granata with the intent to show potential users its capabilities since the software has not been distributed yet.
+As of March 26th, the software is becoming quite big. Therefore it's difficult to me to explain the meaning of each single button. I will probably do this in the future, updating this guide step by step. 
+I will make sure (but this is just a detail!) to put tips for the user while the cursor is above each button.
+Three big sections below regard: 1) preprocessing, 2) exploring the data in MATLAB GUIs, and 3) averaging the results.
+The preprocessing is made through Python Jupyter notebooks, mostly. The second part of the guide describes how to use the main GUIs to explore and save tailored analyses for single experiments. Finally, I describe how to perform a quantitative measurement of the results from single experiments belonging to a certain experimental group.
+Ideally, the software not only permits the broad visualization, but also an automatic statistical assessment of the desired metrics.
 ## Screenshots of the main GUIs
 
 ## Preprocessing in Tint and Python
