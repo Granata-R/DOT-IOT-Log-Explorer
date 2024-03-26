@@ -77,9 +77,26 @@ I added also a section for calculating thigmotaxis and for calculating an index 
 ### Sleep
 The software incorporates an edited version of the popular software AccuSleep (see:) for sleep segmentation.
 Briefly, it allows to automatically assign the movement epochs (as defined by the user in the Movement tab) to wakefulness. Note that we use a setting by which the immobility is immobility only if it lasts only 1 second. therefore, artifacts due to the natural movement are in part excluded.
-
 Please read the AccuSleep documentation for seeing how to use it.
 Once the data is saved, this edited version generates a folder (in the same folder of the original .txt file) where the sleep labels are saved. thereupon they can be loaded by the main GUI for displaying them and to check, for example, the unit behavior during wakefulness, REM, NREM.
+
+## Comodulation module
+The comodulation module allows to perform analysis of theta vs. gamma components of the source signal, which can be EEG or LFP.
+
+For the comodulatio I based mostly on three metrics which are phase locking value (PLV), MEAN VECTOR LENCGTH ( MVL), modulation index (MI). Furthermore, a fourth metric is the cross correlation. the two signals are the theta and gamma components of the original trace.
+
+The GUI appears as follows.
+### Comodulograms
+The left panel encompass the possibility to compute a "comodulogram". this graph computes the comodulation with any of the three phase-amplitude coupling methods MVL, PLV or MI) between fixed bins of frequency. Specifically, in the hippocampus the "driver" is lower frequencies, while the "signal" is higher frequency. in the hippocampus they correspond to to theta and gamma, mostly.
+the typical shape of the comodulogram is a cloud shape whose bounding box fall within the theta (x axis) and gamma (y axis) ranges.
+
+the comodulogram can be computed as well upon filtering the original trace according to the time window or behavioral epochs.
+
+### PAC-per-second
+The rightmost panel are dedicated to the PAC per second. As the name suggests, this code computes these metrics for each second of the trace. The result is a bar that can be visualized in the original main GUI, by selecting the appropriate radio buttons.
+The PAC per second metric is also endowed by a shuffling control. You can decide how many times you want to shuffle. Based on the shuffling repetitions a surrogate PAC-per-second is generated and subtracted statistically to the raw data.
+
+On the right mostpanels, you can see the bars showing the mean raw or filtered scores during time or behavioral epochs.
 
 
 
