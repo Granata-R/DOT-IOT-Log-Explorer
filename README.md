@@ -1,23 +1,40 @@
 # DOT-IOT-Log-Explorer
 
-DOT-IOT-Log-Explorer is a Python/MATLAB software for broad analysis of electrophysiological data from freely behaving animals. For the moment the workflow is limited to data recorded through the Axona DacqUSB recording system. 
-In short, DOT-IOT-Log-Explorer can be used for broad visualization and quantitative analysis of spectral properties, movement patterns, sleep patterns, neuronal activity, comodulation between theta and gamma components of the EEG/LFP. At the core of the software there is the spectral and unit analysis under specific behavioral epochs. One inner feature of DOT-IOT Log Explorer is an "unwinding" option, which allows the user to manually define the behaviorally relevant epochs. 
+DOT-IOT-Log-Explorer is a Python/MATLAB software for broad analysis of electrophysiological data from freely behaving animals. 
+
+DOT-IOT-Log-Explorer can be used for broad visualization and quantitative analysis of spectral properties, movement patterns, sleep patterns, neuronal activity, comodulation between theta and gamma components of EEG/LFP. At the core of the software there is the spectral and unit analysis under specific behavioral epochs. One inner feature of DOT-IOT Log Explorer is an "unwinding" option that allows the user to manually define the behaviorally relevant epochs. 
+
 DOT-IOT-Log-Explorer is made of around 20k lines of custom Python/MATLAB code. It leverages compatibility with state-of-the-art computational tools in systems neuroscience. These include SpikeInterface (for standardized data extraction), Kilosort (for spike sorting), AccuSleep (for semi-automated sleep segmentation), ANY-maze (for manual review of behavior through key logs.) 
-Some of them are not free/not easy to use. I have made sure to provide all the information in the Requirements section.
+
 ## Credits
 The software was created by Rocco Granata with inputs from Diletta Cavezza.
 The recipient lab is the neuropsychopharmacology laboratory of Dr. Elvira De Leonibus.
-## Requirements.
-Our workflow has been tested on Windows only, though the entire workflow should work on other operative systems by doing small changes.
-Python (Jupyter) is always needed to preprocess the recording files. Since the pipeline assumes to preprocessing the recording files via SpikeInterface (always needed as well), please use the SpikeInterface installation guide to get Python + SpikeInterface.
+
+## Requirements and limings factors
+### OS
+Our workflow has been tested on **Windows** only, though the entire workflow should work on other operative systems by doing small changes.
+### Python + Jupyter + SpikeInterface
+**Python (Jupyter)** is always needed to preprocess the recording files. Since the pipeline assumes to preprocess the recording files via **SpikeInterface (always needed)**, please use the SpikeInterface installation guide to get Python + SpikeInterface.
+### MATLAB
+**MATLAB** is required. Any version above **R2019** should work fine.
+Ensure that you have installed these add-ons:
+
+1) **Image Processing Toolbox** (always required);
+
+2) **Signal Processing Toolbox** (always required);
+
+3) **Statistics and Machine Learning Toolbox** (might be required for certain actions).
+   
+5) **Deep Learning Toolbox** (might be required for certain actions).
+
+If not, you can do this by following the official [Mathworks guide for installing Add-Ons](https://it.mathworks.com/help/matlab/matlab_env/get-add-ons.html).
+### Recording system
+For the moment, the workflow is limited to data recorded through the **Axona DacqUSB recording system**. 
+
 ## About this guide
-This guide has been written by Rocco Granata with the intent to show potential users its capabilities since the software has not been distributed yet.
-As of March 26th, the software is becoming quite big. Therefore it's difficult to me to explain the meaning of each single button. I will probably do this in the future, updating this guide step by step. 
-I will make sure (but this is just a detail!) to put tips for the user while the cursor is above each button.
-Three big sections below regard: 1) preprocessing, 2) exploring the data in MATLAB GUIs, and 3) averaging the results.
-The preprocessing is made through Python Jupyter notebooks, mostly. The second part of the guide describes how to use the main GUIs to explore and save tailored analyses for single experiments. Finally, I describe how to perform a quantitative measurement of the results from single experiments belonging to a certain experimental group.
-Ideally, the software not only permits the broad visualization, but also an automatic statistical assessment of the desired metrics.
-## Screenshots of the main GUIs
+This guide has been written by R. Granata with the intent to show potential users the software capabilities in brief.
+
+As the software is complex just the general pipelines are described.
 
 ## Preprocessing in Tint and Python
 The preprocessing of the data operates through Python Jupyter notebooks. For the moment, preprocessing involves two third-party software that are:
