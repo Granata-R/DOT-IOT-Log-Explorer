@@ -120,5 +120,30 @@ This button launches a dialog which basically is a time-stamped keylogger. Throu
 Once you have perfored your unwinding, you can see what happens to the periodogram while the animal was exploring all object, or a single object (just use the dropdown menu). furthermore you can limit the periodogram and unit computation to the first n seconds of exploration.
 finally, since precise unwinding is difficult and you could not be as fast as you should, you can also shift everything on the left of n seconds usig this button. You can also move everything on the right if you want. it might be useful for "anticipatory" behavior!
 
+# Results averaging
 ## Saving the module analysis
-The analysis can be conducted at different levels using the various modules. Regardless, to save the file, you need to click on the orange "Save" button after specifying the mouse and test IDs, which will generate the filename for the output file. The output file is stored in the Results folder. If multiple analyses are performed on the same file, with the same time window/behavior filters, then the filename will include specific labels just before the format. These labels might appear as "FILENAME_"[Spg][Mov][Sleep][Pac][Units]".mat" if the analysis includes spectrum, movement, sleep, comodulation, and single units.
+The analysis can be conducted at different levels using the various modules.
+The GUIs described above handle data regarding a single experiment.
+
+Within each GUI, there is an orange "Save" button alongside edit fields for specifying mouse and test IDs, the latter being useful for generating the filename for the output file. The output file is stored in the Results folder. 
+
+### About the automatic filename generation
+For the moment, the filename contains information about: mouse ID, test ID, channel used, time window/behavior epochs used. If multiple analyses are performed on the same file, with the same time window/behavior filters, then the filename will include specific labels just before the format. These labels might appear as "FILENAME_"[Spg][Mov][Sleep][Pac][Units]".mat" if the analysis includes spectrum, movement, sleep, comodulation, and single units.
+
+## Using the Results module
+Finally, the results module has the aim to get all the outputs from single experiments and averaging them. This "averaging" works on multiple levels depending on the types of analysis that have been made. 
+### Organizing group folders
+At the core of the results module there is the idea that the results obtained from main GUIs should be copied and organized in folders. Each folder may contain all the results sharing a particular experimental conditions (e.g., you might have a folder where all male animal results are saved, and the other for females). 
+It is probably better to do this by duplicating the files in the /Results/ folder. In this way the "raw" results will remain, while you can save isntead the group folder anywhere.
+
+## Results module
+The results module is still in development because at the moment is a bit messy.
+For the moment, you can use to perform the following opeartions:
+1) periodogram averaging
+2) analysis of sleep phases (REM, NREM): how much they last and how much are they scattered
+3) analysis of movement. Half a dozen of metrics are available at the moment! 
+4) comodulation analysis
+5) spike analysis (to be done)
+
+The average results are computed both in terms of distributions and in terms of box chart. While generating box chart the program automatically computes non parametric tests.
+While averaging the periodogram, also in that case non parameteric tests are used for each pyssiologically relevant interval of frequencies.
