@@ -62,18 +62,18 @@ It requires the *.bin* file and, similarly to the spike one, its output is in *.
 ## Explore preprocessed data in MATLAB
 Once you've completed preprocessing the relevant information, you can delve into it using DOT IOT Log Explorer, which is accessible via MATLAB either through AppDesigner or by directly executing the command "DOT_IOT_Log_Explorer" in the command window.
 
-## DOT-IOT Log Explorer (main GUI)
-At the top left, you'll find the *Load* button, allowing you to select the *.txt* table from TINT. Take note of the check buttons to the right of the open button. Among them, the most crucial ones during this phase are LFPs and Spikes, enabling you to choose whether to import this additional information. Ensure that the LFP file is stored in the same folder as the desired .txt file. If spikes have been extracted, maintain the same folder structure, as parent folders contain information from Phy that may be necessary.
+## DOT-IOT Log Explorer
+At the top left, you'll find the *Load* button, allowing you to select the *.txt* table from TINT/Jupyter. Among the check buttons on the right, the most crucial ones during this phase are *LFPs* and *Spikes*, enabling you to choose whether to import this additional information. This is how the graphical user interface (GUI) appears before loading the data.
 
-If the GUI loads correctly, you'll see an interface resembling this. The first column represents user actions, such as selecting a time window or determining which behavioral epochs to utilize. Most of these parameters are self-explanatory. The second column displays visualization output. Here, you can view the default trace, typically EEG or one of the channel LFPs if selected. These axes also display various comodulation metrics and signal components.
+The figure shows an example of the GUI after loading the data. The GUI might be divided in three columns or blocks. The left block contains handles for user control. These involve edit field to select a time window or to determine which behavioral epochs to use. The center block contains plot for data visualization. Going from top to bottom, there are:
+1) EEG/LFP time series;
+2) Units raster plot;
+3) Behavioral epochs;
+4) Spectrogram.
 
-Directly below the EEG axis is the unit axis, showcasing a raster plot depicting units over time. Further specific metrics can be explored via the units module.
+The behavioral epochs might be referred to animal speed, object exploration, interaction with a conspecific, stereotypies, sleep epochs, and more. Behavioral epochs are always binarized in terms of *Behavior YES* or *Behavior NO*, according to GUI paramters.
 
-Continuing downward, you'll find the axis containing information regarding behavioral epochs. Currently, "behavior" encompasses high speed, manual unwound epochs (e.g., object exploration, interaction with a conspecific, or specific stereotypic behaviors in the animal), and sleep epochs.
-
-Finally, below this is the spectrogram.
-
-On the right column, you'll find some initial result outputs related to the explored data based on the selected time window and behavioral epochs. These results are presented using two pairs of colors: yellow versus magenta (for defining the selected time window versus all other times) and green versus red (for defining behavior "yes" versus behavior "no"). Bars are displayed to emphasize the activity of single neurons, and periodograms can be computed based on these filters.
+The right block shows some initial results related to the explored data, after filtering it with the selected time window and behavioral epochs. The mean activity of the units is on the top, while periodograms are on the bottom. All results are presented in two pairs of colors: yellow vs. magenta for discriminating the selected time window vs. all other times, respectively, and green vs. red for defining *Behavior YES* vs. *Behavior NO*, respectively. This color pattern is inherited by child apps, described below.
 
 ## Analysis of movement and sleep patterns
 Bly clicking on the "Movement and sleep" button in the main GUI, a submodule for this analysis is launched.
