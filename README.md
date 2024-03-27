@@ -14,13 +14,13 @@ It is made of around 20k lines of custom Python/MATLAB code and leverages compat
 - **MATLAB** is required. Any version above **R2019** should work fine.
 Ensure that you have installed these add-ons:
 
-1) **Image Processing Toolbox** (always required);
+- 1) **Image Processing Toolbox** (always required);
 
-2) **Signal Processing Toolbox** (always required);
+- 2) **Signal Processing Toolbox** (always required);
 
-3) **Statistics and Machine Learning Toolbox** (might be required for certain actions).
+- 3) **Statistics and Machine Learning Toolbox** (might be required for certain actions).
    
-5) **Deep Learning Toolbox** (might be required for certain actions).
+- 5) **Deep Learning Toolbox** (might be required for certain actions).
 
 If not, you can do this by following the official [Mathworks guide for installing Add-Ons](https://it.mathworks.com/help/matlab/matlab_env/get-add-ons.html).
 
