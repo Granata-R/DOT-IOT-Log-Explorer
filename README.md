@@ -56,7 +56,7 @@ Our current workflow does not consider the sorting made with TINT, favoring exte
 Both the Jupyter Notebook mentioned are straightforward and thoroughly commented.
 
 ### Extracting LFPs
-To extract the LFPs for each channel, a third custom Jupyter notebook can be used.
+To extract the LFPs for each channel, a third custom Jupyter notebook, *LFPExtraction_AxonaDacqUSB.ipynb*, can be used.
 It requires the *.bin* file and, similarly to the spike one, its output is in *.mat* format.
 
 ## Explore preprocessed data in MATLAB
