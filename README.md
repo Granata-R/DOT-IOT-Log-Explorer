@@ -29,33 +29,31 @@ If not, you can do this by following the official [Mathworks guide for installin
 - For the moment, the workflow is limited to data recorded through the [**Axona DacqUSB recording system**](http://www.axona.com/) and processed with Axona's sorter **TINT**. 
 
 ## Preprocessing
-Data preprocessing is made in Python with Jupyter notebooks. 
+Data preprocessing is made with Axona TINT and custom Jupyter notebooks. 
 
-**Note: about the possible data files***
-The recording files collected by Axona DacqUSB can be saved in two different formats, *.bin* (continuous) and *.n* (snippets. E.g., *.1*, *.2*, *.3*, ..., *.numberOfChannels*). 
+**Note: about the possible data formats***
+The recording files collected by Axona DacqUSB can be saved in two main formats, *.bin* (continuous) and *.n* (snippets. E.g., *.1*, *.2*, *.3*, ..., *.numberOfChannels*). 
 
-Both formats are used in our workflow. The *.bin* format can be used to extract units and LFPs through dedicated Jupyter Notebooks. The *.n* format (which can be obtained from the *.bin* through Axona DacqUSB converter) is used to export basic information about EEG, speed, coordinates, and other metrics in form of a text table (see next section).
+Both formats are used in our workflow. The *.bin* format can be used to extract units and LFPs through dedicated Jupyter Notebooks. The *.n* format (which can be obtained from the *.bin* through Axona DacqUSB converter) is used to export basic information about EEG, speed, coordinates, and other metrics in form of a text table (see next section). The latter is always required to run DOT-IOT Log Explorer.
 
-### Extracting the *.txt* table with TINT
-DOT-IOT Log Explorer was designed as a tailored system to analyze data extracted from Axona TINT. Therefore, this step is always required.
+### TINT preprocessing
+Among the other things, Axona TINT allows to export a *.txt* table file that contains basic information about EEG, speed, coordinates, and other metrics, from the original *.n* file. 
+The goal of this step is to "simulate" a spike sorting in order to get this table. The table is always required for launching DOT-IOT Log Explorer. Actual spike sorting and LFPs can be added later by following the next sections of preprocessing.
+
+**Steps for extracting the *.txt* table with TINT using the *.n* file**
 1) First, make sure to have the *.n* files. If you have the *.bin* file only, you can convert it through Axona DacqUSB converter. If you encounter some limitations based on the sampling rate please check Axona DacqUSB manual.
 2) Load any of the *.n* files of the experiment in TINT. It doesn't matter which channel you select, because TINT spikes are not used. 
 3) Move all TINT spikes to *cluster 1* and *save* all.
 4) Export the table through the *Export* section. Make sure that the export sampling rate of the EEG (that is 250 Hz), is selected. For the rest, keep the default values.
 
-The result is a quite large *.txt* table file that contains basic information about EEG, speed, coordinates, and other metrics. Once you got this file, you can run the main GUI in DOT-IOT Log Explorer.
+### Sorting spikes with SpikeInterface in Jupyter
+Our current workflow does not consider the sorting made with TINT, favoring external sorters such as KiloSort. 
 
-### Sorting spikes with SpikeInterface
-As mentioned in the section above, we have decided to rely on manual clustering with TINT. Instead, we preferred utilizing more advanced spike sorters such as KiloSort. To utilize these external sorters, you need to first install them on your local workstation. Then, assuming you have Python installed (see requirements), you can utilize the "extract..." file, which is a Jupyter Notebook that automatically initiates the sorting process. Sorting can only occur if a .bin file is provided to the notebook; otherwise, it's not possible to load the spikes.
+1) **Spike sorting**. An automated sorting can be made using a custom Jupyter Notebook with leverages SpikeInterface. The only thing required is the *.bin* recording. The output is standardized regardless of the sorter used.
+2) **Manual curation**. Found units can be manually curated using [Phy](https://github.com/cortex-lab/phy).
+3) Once sorting and manual clustering are complete, the next step involves organizing the spiking information as *.mat* files for MATLAB. This can be achieved through a second custom Jupyter Notebook.
 
-If you meet all the requirements, simply execute each block of the Jupyter Notebook to initiate the sorting. Note: the second block prompts the user with a dialog to choose the .bin file. The sorted data will be saved in a subfolder within the .bin file's directory.
-
-A second step is then necessary. After sorting the data, you'll want to conduct manual clustering through Phy. Since the sorting was performed by SpikeInterface, the format of the output files will be standardized regardless of the sorter used. Once sorting and manual clustering are complete (ensure to save in Phy), the next step involves organizing the spiking information in a format compatible with MATLAB. This can be achieved through a second Jupyter Notebook, which performs two tasks:
-
-1) Generates .mat files containing raster information of the spiking activity.
-2) Allows previewing the coordinate information versus the spike information for place cell analysis. This latter option serves as a preview. In MATLAB, the dedicated module "Unit Explorer" enables deeper analysis.
-
-Again, this second notebook is straightforward and can be executed block by block. Similar to the first notebook, it prompts the user with a dialog to select the desired file upon executing the second block.
+Both the Jupyter Notebook mentioned are straightforward and thoroughly commented.
 
 ### Extracting LFPs
 To extract the LFPs for each channel, a third Jupyter notebook can be used.
