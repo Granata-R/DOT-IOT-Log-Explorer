@@ -76,19 +76,21 @@ The behavioral epochs might be referred to animal speed, object exploration, int
 The right block shows some initial results related to the explored data, after filtering it with the selected time window and behavioral epochs. The mean activity of the units is on the top, while periodograms are on the bottom. All results are presented in two pairs of colors: yellow vs. magenta for discriminating the selected time window vs. all other times, respectively, and green vs. red for defining *Behavior YES* vs. *Behavior NO*, respectively. This color pattern is inherited by child apps, described below.
 
 ## Analysis of movement and sleep patterns
-Bly clicking on the "Movement and sleep" button in the main GUI, a submodule for this analysis is launched.
-The module is composed of two tabs for movement and sleep, respectively. 
+Bly clicking on the *Movement and sleep* button in the main GUI, a submodule for this analysis is launched.
 
 ### Movement
-Regarding movement, an overview of the speed time series and cumulative distance are provided. The module inherits the epoch filtering from main GUI: accordingly, it shows the distribution of the speed during these epochs alongside descriptive metrics in the form of box charts. 
+Regarding movement, in the _Movement_ tab, an overview of the speed time series and cumulative distance is provided. The module inherits the epoch filtering from main GUI.It shows the speed/distance distribution during these epochs, alongside descriptive metrics, in the form of box charts. 
 
-The speed time series and the cumulative distance can be color coded on the basis of hard thresholds applied to the speed vector (and its accelleration). These hard thresholds span both in terms of value (cm/s or cm/s^2) and time and are
-1) Movement (i.e., everything that is not immobility) [green]
-2) Running (sustained high-velocity epochs) [red]
-3) Burst (sustained high-accelleration epochs) [blue]
-These hard thresholds can be applied to the user. The figure shows an example of color coded time series and of a fraction of it.
+The speed time series and the cumulative distance can be segmented into movement states. They are:
+1) Movement (i.e., everything that is not immobility)
+2) Running (sustained high-velocity epochs)
+3) Bursts (sustained high-accelleration epochs)
 
-I added also a section for calculating thigmotaxis and for calculating an index of the head turning angles.
+The movement state segmentation is set with two hard thresholds. With the first one the user can select the minimum cm/s (or cm/s^2 for bursts). The second is minimal duration in seconds.
+The figure shows an example of color coded time series and of a fraction of it.
+
+In this section it is also possible to retrieve the arena borders (with some manual refinement) and calculate the tigmotaxis score.
+In addition, metrics related to the head turn angles can be extracted as well both in the whole arena and in the center of it. These metrics might be employed to infer exploration of the open field and some stereotypies.
 
 ### Sleep
 The software incorporates an edited version of the popular software AccuSleep (see:) for sleep segmentation.
