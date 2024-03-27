@@ -5,7 +5,7 @@ DOT-IOT-Log-Explorer is a Python/MATLAB software for broad analysis of electroph
 DOT-IOT-Log-Explorer was created by Rocco Granata as tailored software for the neuropsychopharmacology laboratory of Dr. Elvira De Leonibus. 
 It is made of around 20k lines of custom Python/MATLAB code and leverages compatibility with state-of-the-art tools in systems neuroscience. These include [SpikeInterface](https://github.com/SpikeInterface/spikeinterface) (for standardized data extraction), [Kilosort](https://github.com/MouseLand/Kilosort) (for spike sorting), [AccuSleep](https://github.com/zekebarger/AccuSleep) (for semi-automated sleep segmentation), [ANY-maze](https://www.any-maze.com/) (for manual review of behavior through key logs). 
 
-## Requirements and limitings factors
+## Requirements and limiting factors
 
 - So far, the workflow has been tested on **Windows** only.
 
