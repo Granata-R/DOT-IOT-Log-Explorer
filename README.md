@@ -96,9 +96,9 @@ In addition, metrics related to the head turn angles can be extracted as well bo
 In the *Sleep* tab there is a launcher for an edited version of [**AccuSleep**](https://github.com/zekebarger/AccuSleep).
 AccuSleep is a popular MATLAB software to do automatic and manual segmentation into wakefulness and rapid eye movement (REM), and non REM (NREM) sleep, basing on EEG and electromyogram (EMG). It comes already installed in DOT-IOT Log Explorer.
 
-As a default option, if you don't have EMG you can use the speed vector to do a manual segmentation of sleep states. To save some time, you DOT-IOT Log Explorer can automatically assign the movement epochs (as defined by the user in the *Movement* tab) to the wakefulness epochs in the AccuSleep GUI. 
+As a default option, if you don't have EMG you can use the speed vector to do a manual segmentation of sleep states. To save some time, DOT-IOT Log Explorer can automatically assign the movement epochs (as defined by the user in the *Movement* tab) to the wakefulness epochs in the AccuSleep GUI. 
 
-Once the data is saved, this edited version generates a *Sleep* folder (in the same folder of the original *.txt* file) where the sleep labels are saved. Thereupon, they can be loaded by the main GUI for displaying them and to check, for example, the unit metrics during wakefulness, REM, NREM.
+Once the data is saved, this edited version generates a *Sleep* folder (in the same folder of the original *.txt* file) where the sleep labels are saved. Thereupon, these labels can be loaded by the main GUI for displaying them and to check, for example, the unit metrics during wakefulness, REM, NREM.
 
 ### Bonus: what if I want to do the automatic segmentation of sleep but I do not have the EMG?
 A recent paper by H. Osanai et al, [Extracting electromyographic signals from multi-channel LFPs using independent component analysis without direct muscular recording](https://www.cell.com/cell-reports-methods/fulltext/S2667-2375(23)00105-4), showed that it is possible to extract a simulated EMG from LFPs.
