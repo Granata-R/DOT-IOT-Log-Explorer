@@ -79,7 +79,7 @@ The right block shows some initial results related to the explored data, after f
 Bly clicking on the *Movement and sleep* button in the main GUI, a submodule for this analysis is launched.
 
 ### Movement
-Regarding movement, in the _Movement_ tab, an overview of the speed time series and cumulative distance is provided. The module inherits the epoch filtering from main GUI.It shows the speed/distance distribution during these epochs, alongside descriptive metrics, in the form of box charts. 
+Regarding movement, in the _Movement_ tab, an overview of the speed time series and cumulative distance is provided. The module inherits the epoch filtering from main GUI. It shows the speed/distance distribution during these epochs, alongside descriptive metrics, in the form of box charts. 
 
 The speed time series and the cumulative distance can be segmented into movement states. They are:
 1) Movement (i.e., everything that is not immobility)
@@ -93,10 +93,10 @@ In this section it is also possible to retrieve the arena borders (with some man
 In addition, metrics related to the head turn angles can be extracted as well both in the whole arena and in the center of it. These metrics might be employed to infer exploration of the open field and some stereotypies.
 
 ### Sleep
-In the *Sleep* tab there is a launcher for an edited version of AccuSleep.
-AccuSleep (see link in Requirements) is already installed. It is a popular MATLAB software to do automatic and manual segmentation into wakefulness and rapid eye movement (REM), and non REM (NREM) sleep, basing on EEG and electromyogram (EMG).
+In the *Sleep* tab there is a launcher for an edited version of [**AccuSleep**](https://github.com/zekebarger/AccuSleep).
+AccuSleep is a popular MATLAB software to do automatic and manual segmentation into wakefulness and rapid eye movement (REM), and non REM (NREM) sleep, basing on EEG and electromyogram (EMG). It comes already installed in DOT-IOT Log Explorer.
 
-If you don't have EMG, it is possible to use DOT-IOT Log Explorer to set the speed vector as EMG and do manual segmentation of sleep states. To save some time, you can automatically assign the movement epochs (as defined by the user in the *Movement* tab) to the wakefulness epochs in AccuSleep. In this way, the manual segmentation is restricted to immobility times.
+As a default option, if you don't have EMG you can use the speed vector to do a manual segmentation of sleep states. To save some time, you DOT-IOT Log Explorer can automatically assign the movement epochs (as defined by the user in the *Movement* tab) to the wakefulness epochs in the AccuSleep GUI. 
 
 Once the data is saved, this edited version generates a *Sleep* folder (in the same folder of the original *.txt* file) where the sleep labels are saved. Thereupon, they can be loaded by the main GUI for displaying them and to check, for example, the unit metrics during wakefulness, REM, NREM.
 
