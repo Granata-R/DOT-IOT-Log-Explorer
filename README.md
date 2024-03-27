@@ -1,22 +1,17 @@
 # DOT-IOT-Log-Explorer
 
-DOT-IOT-Log-Explorer is a Python/MATLAB software for broad analysis of electrophysiological data from freely behaving animals. 
+DOT-IOT-Log-Explorer is a Python/MATLAB software for broad analysis of electrophysiological data from freely behaving animals. It can be used for broad visualization and quantitative analysis of spectral properties, movement patterns, sleep patterns, neuronal activity, and phase-amplitude coupling, during specified time windows or behaviorally relevant epochs. 
 
-DOT-IOT-Log-Explorer can be used for broad visualization and quantitative analysis of spectral properties, movement patterns, sleep patterns, neuronal activity, and phase-amplitude coupling, during specified time windows or behaviorally relevant epochs. 
-
-DOT-IOT-Log-Explorer is made of around 20k lines of custom Python/MATLAB code. It leverages compatibility with state-of-the-art computational tools in systems neuroscience. These include SpikeInterface (for standardized data extraction), Kilosort (for spike sorting), AccuSleep (for semi-automated sleep segmentation), ANY-maze (for manual review of behavior through key logs.) 
-
-## Credits
-The software was created by Rocco Granata with inputs from Diletta Cavezza.
-The recipient lab is the neuropsychopharmacology laboratory of Dr. Elvira De Leonibus.
+DOT-IOT-Log-Explorer was created by Rocco Granata as tailored software for the neuropsychopharmacology laboratory of Dr. Elvira De Leonibus. 
+It is made of around 20k lines of custom Python/MATLAB code and leverages compatibility with state-of-the-art tools in systems neuroscience. These include [SpikeInterface](https://github.com/SpikeInterface/spikeinterface) (for standardized data extraction), [Kilosort](https://github.com/MouseLand/Kilosort) (for spike sorting), [AccuSleep](https://github.com/zekebarger/AccuSleep) (for semi-automated sleep segmentation), [ANY-maze](https://www.any-maze.com/) (for manual review of behavior through key logs.) 
 
 ## Requirements and limitings factors
-### OS
-Our workflow has been tested on **Windows** only, though the entire workflow should work on other operative systems by doing small changes.
-### Python + Jupyter + SpikeInterface
-**Python (Jupyter)** is always needed to preprocess the recording files. Since the pipeline assumes to preprocess the recording files via **SpikeInterface (always needed)**, please use the SpikeInterface installation guide to get Python + SpikeInterface.
-### MATLAB
-**MATLAB** is required. Any version above **R2019** should work fine.
+
+- So far, the workflow has been tested on **Windows** only.
+
+- **Python (Jupyter)** is always needed to preprocess the recording files. Since the pipeline assumes to preprocess the recording files via **SpikeInterface (always needed)**, please use the [SpikeInterface guides](https://github.com/SpikeInterface/spikeinterface) to set up the environment.
+
+- **MATLAB** is required. Any version above **R2019** should work fine.
 Ensure that you have installed these add-ons:
 
 1) **Image Processing Toolbox** (always required);
@@ -28,8 +23,8 @@ Ensure that you have installed these add-ons:
 5) **Deep Learning Toolbox** (might be required for certain actions).
 
 If not, you can do this by following the official [Mathworks guide for installing Add-Ons](https://it.mathworks.com/help/matlab/matlab_env/get-add-ons.html).
-### Recording system
-For the moment, the workflow is limited to data recorded through the **Axona DacqUSB recording system**. 
+
+- For the moment, the workflow is limited to data recorded through the **Axona DacqUSB recording system**. 
 
 ## About this guide
 This guide has been written by R. Granata with the intent to show potential users the software capabilities in brief.
