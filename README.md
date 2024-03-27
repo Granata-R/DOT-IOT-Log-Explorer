@@ -93,10 +93,18 @@ In this section it is also possible to retrieve the arena borders (with some man
 In addition, metrics related to the head turn angles can be extracted as well both in the whole arena and in the center of it. These metrics might be employed to infer exploration of the open field and some stereotypies.
 
 ### Sleep
-The software incorporates an edited version of the popular software AccuSleep (see:) for sleep segmentation.
-Briefly, it allows to automatically assign the movement epochs (as defined by the user in the Movement tab) to wakefulness. Note that we use a setting by which the immobility is immobility only if it lasts only 1 second. therefore, artifacts due to the natural movement are in part excluded.
-Please read the AccuSleep documentation for seeing how to use it.
-Once the data is saved, this edited version generates a folder (in the same folder of the original .txt file) where the sleep labels are saved. thereupon they can be loaded by the main GUI for displaying them and to check, for example, the unit behavior during wakefulness, REM, NREM.
+In the *Sleep* tab there is a launcher for an edited version of AccuSleep.
+AccuSleep (see link in Requirements) is already installed. It is a popular MATLAB software to do automatic and manual segmentation into wakefulness and rapid eye movement (REM), and non REM (NREM) sleep, basing on EEG and electromyogram (EMG).
+
+If you don't have EMG, it is possible to use DOT-IOT Log Explorer to set the speed vector as EMG and do manual segmentation of sleep states. To save some time, you can automatically assign the movement epochs (as defined by the user in the *Movement* tab) to the wakefulness epochs in AccuSleep. In this way, the manual segmentation is restricted to immobility times.
+
+Once the data is saved, this edited version generates a *Sleep* folder (in the same folder of the original *.txt* file) where the sleep labels are saved. Thereupon, they can be loaded by the main GUI for displaying them and to check, for example, the unit metrics during wakefulness, REM, NREM.
+
+### Bonus: what if I want to do the automatic segmentation of sleep but I do not have the EMG?
+A recent paper by H. Osanai et al, [Extracting electromyographic signals from multi-channel LFPs using independent component analysis without direct muscular recording](https://www.cell.com/cell-reports-methods/fulltext/S2667-2375(23)00105-4), showed that it is possible to extract a simulated EMG from LFPs.
+
+If you have the *.bin* recording you can use it for LFP extraction (see **LFP extraction** section), simulate the EMG through the *Sleep* module, and run the automated version of AccuSleep. Note that these functions require the Deep Learning toolbox (see **Requirements**) and have not been tested yet. 
+The quality of the extracted EMG seems to be dependent on the placement of the electrodes. The shallower they are, the better it is for this purpose.
 
 ## Comodulation module
 The comodulation module allows to perform analysis of theta vs. gamma components of the source signal, which can be EEG or LFP.
