@@ -49,21 +49,21 @@ The goal of this step is to "simulate" a spike sorting in order to get this tabl
 ### Sorting spikes with SpikeInterface in Jupyter
 Our current workflow does not consider the sorting made with TINT, favoring external sorters such as KiloSort. 
 
-1) **Spike sorting**. An automated sorting can be made using a custom Jupyter Notebook with leverages SpikeInterface. The only thing required is the *.bin* recording. The output is standardized regardless of the sorter used.
-2) **Manual curation**. Found units can be manually curated using [Phy](https://github.com/cortex-lab/phy).
-3) Once sorting and manual clustering are complete, the next step involves organizing the spiking information as *.mat* files for MATLAB. This can be achieved through a second custom Jupyter Notebook.
+1) **Spike sorting**. An automated sorting can be made using the custom Jupyter Notebook *1a - SpikeSorting_AxonaDacqUSB.ipynb* with leverages SpikeInterface. The only thing required is the *.bin* recording. The output is standardized regardless of the sorter used.
+2) **Manual curation**. Found units can be manually curated using [Phy](https://github.com/cortex-lab/phy). Phy should have already been installed via SpikeInterface.
+3) **Creation of *.mat* files**. Once sorting and manual clustering are complete, the next step involves organizing the spiking information as *.mat* files for MATLAB. This can be achieved through a second custom Jupyter Notebook. This second notebook requires to select the original *.txt* table from TINT. It will process the TINT table by adding the spikes in the "cluster" columns.
 
 Both the Jupyter Notebook mentioned are straightforward and thoroughly commented.
 
 ### Extracting LFPs
-To extract the LFPs for each channel, a third Jupyter notebook can be used.
-This notebook, called "", requires the .bin file. Its output is a folder called "LFP" that contains .mat matrices with the LFPs.
+To extract the LFPs for each channel, a third custom Jupyter notebook can be used.
+It requires the *.bin* file and, similarly to the spike one, its output is in *.mat* format.
 
-# Explore preprocessed data in MATLAB
-## DOT-IOT Log Explorer (main GUI)
+## Explore preprocessed data in MATLAB
 Once you've completed preprocessing the relevant information, you can delve into it using DOT IOT Log Explorer, which is accessible via MATLAB either through AppDesigner or by directly executing the command "DOT_IOT_Log_Explorer" in the command window.
 
-Upon launching, the main GUI appears. At the top left, you'll find the Load button, allowing you to select the .txt file containing your data. Take note of the check buttons to the right of the open button. Among them, the most crucial ones during this phase are LFPs and Spikes, enabling you to choose whether to import this additional information. Ensure that the LFP file is stored in the same folder as the desired .txt file. If spikes have been extracted, maintain the same folder structure, as parent folders contain information from Phy that may be necessary.
+## DOT-IOT Log Explorer (main GUI)
+At the top left, you'll find the *Load* button, allowing you to select the *.txt* table from TINT. Take note of the check buttons to the right of the open button. Among them, the most crucial ones during this phase are LFPs and Spikes, enabling you to choose whether to import this additional information. Ensure that the LFP file is stored in the same folder as the desired .txt file. If spikes have been extracted, maintain the same folder structure, as parent folders contain information from Phy that may be necessary.
 
 If the GUI loads correctly, you'll see an interface resembling this. The first column represents user actions, such as selecting a time window or determining which behavioral epochs to utilize. Most of these parameters are self-explanatory. The second column displays visualization output. Here, you can view the default trace, typically EEG or one of the channel LFPs if selected. These axes also display various comodulation metrics and signal components.
 
