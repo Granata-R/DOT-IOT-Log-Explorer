@@ -66,9 +66,9 @@ Once you've completed preprocessing the relevant information, you can delve into
 At the top left, you'll find the *Load* button, allowing you to select the *.txt* table from TINT/Jupyter. Among the check buttons on the right, the most crucial ones during this phase are *LFPs* and *Spikes*, enabling you to choose whether to import this additional information. This is how the graphical user interface (GUI) appears before loading the data.
 
 The figure shows an example of the GUI after loading the data. The GUI might be divided in three columns or blocks. The left block contains handles for user control. These involve edit field to select a time window or to determine which behavioral epochs to use. The center block contains plot for data visualization. Going from top to bottom, there are:
-1) EEG/LFP time series;
-2) Units raster plot;
-3) Behavioral epochs;
+1) EEG/LFP time series.
+2) Units raster plot.
+3) Behavioral epochs.
 4) Spectrogram.
 
 The behavioral epochs might be referred to animal speed, object exploration, interaction with a conspecific, stereotypies, sleep epochs, and more. Behavioral epochs are always binarized in terms of *Behavior YES* or *Behavior NO*, according to GUI paramters.
