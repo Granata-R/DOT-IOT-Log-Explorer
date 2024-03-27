@@ -2,7 +2,7 @@
 
 DOT-IOT-Log-Explorer is a Python/MATLAB software for broad analysis of electrophysiological data from freely behaving animals. 
 
-DOT-IOT-Log-Explorer can be used for broad visualization and quantitative analysis of spectral properties, movement patterns, sleep patterns, neuronal activity, comodulation between theta and gamma components of EEG/LFP. At the core of the software there is the spectral and unit analysis under specific behavioral epochs. One inner feature of DOT-IOT Log Explorer is an "unwinding" option that allows the user to manually define the behaviorally relevant epochs. 
+DOT-IOT-Log-Explorer can be used for broad visualization and quantitative analysis of spectral properties, movement patterns, sleep patterns, neuronal activity, and phase-amplitude coupling, during specified time windows or behaviorally relevant epochs. 
 
 DOT-IOT-Log-Explorer is made of around 20k lines of custom Python/MATLAB code. It leverages compatibility with state-of-the-art computational tools in systems neuroscience. These include SpikeInterface (for standardized data extraction), Kilosort (for spike sorting), AccuSleep (for semi-automated sleep segmentation), ANY-maze (for manual review of behavior through key logs.) 
 
@@ -10,7 +10,7 @@ DOT-IOT-Log-Explorer is made of around 20k lines of custom Python/MATLAB code. I
 The software was created by Rocco Granata with inputs from Diletta Cavezza.
 The recipient lab is the neuropsychopharmacology laboratory of Dr. Elvira De Leonibus.
 
-## Requirements and limings factors
+## Requirements and limitings factors
 ### OS
 Our workflow has been tested on **Windows** only, though the entire workflow should work on other operative systems by doing small changes.
 ### Python + Jupyter + SpikeInterface
