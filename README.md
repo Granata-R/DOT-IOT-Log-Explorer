@@ -1,6 +1,6 @@
 # DOT-IOT-Log-Explorer
 
-DOT-IOT-Log-Explorer is a Python/MATLAB software for broad analysis of electrophysiological data from freely behaving animals. It can be used for broad visualization and quantitative analysis of spectral properties, movement patterns, sleep patterns, neuronal activity, and phase-amplitude coupling, during specified time windows or behaviorally relevant epochs. 
+DOT-IOT-Log-Explorer is a Python/MATLAB software for broad analysis of electrophysiological data from freely behaving animals. It can be used for visualization and quantitative analysis of spectral properties of electroencephalogram (EEG) and local field potentials (LFPs), movement patterns, sleep patterns, neuronal activity, and phase-amplitude coupling, during specified time windows or behaviorally relevant epochs. 
 
 DOT-IOT-Log-Explorer was created by Rocco Granata as tailored software for the neuropsychopharmacology laboratory of Dr. Elvira De Leonibus. 
 It is made of around 20k lines of custom Python/MATLAB code and leverages compatibility with state-of-the-art tools in systems neuroscience. These include [SpikeInterface](https://github.com/SpikeInterface/spikeinterface) (for standardized data extraction), [Kilosort](https://github.com/MouseLand/Kilosort) (for spike sorting), [AccuSleep](https://github.com/zekebarger/AccuSleep) (for semi-automated sleep segmentation), [ANY-maze](https://www.any-maze.com/) (for manual review of behavior through key logs). 
@@ -9,7 +9,7 @@ It is made of around 20k lines of custom Python/MATLAB code and leverages compat
 
 - So far, the workflow has been tested on **Windows** only.
 
-- **Python (Jupyter)** is always needed to preprocess the recording files. Since the pipeline assumes to preprocess the recording files via **SpikeInterface (always needed)**, please use the [SpikeInterface guides](https://github.com/SpikeInterface/spikeinterface) to set up the environment.
+- **Python (Jupyter) + SpikeInterface** is always needed to preprocess the recording files. Since the pipeline assumes to preprocess the recording files via **SpikeInterface (always needed)**, please use the [SpikeInterface guides](https://github.com/SpikeInterface/spikeinterface) to set up the environment.
 
 - **MATLAB** is required. Any version above **R2019** should work fine.
 Ensure that you have installed these add-ons:
@@ -24,14 +24,12 @@ Ensure that you have installed these add-ons:
 
 If not, you can do this by following the official [Mathworks guide for installing Add-Ons](https://it.mathworks.com/help/matlab/matlab_env/get-add-ons.html).
 
+- A **spike sorter** (optional). Some sorters (e.g., spyKING CIRCUS; Tridesclous) are directly installed with SpikeInterface. For other sorters, please refer to this [link](https://spikeinterface.readthedocs.io/en/latest/install_sorters.html).
+
 - For the moment, the workflow is limited to data recorded through the [**Axona DacqUSB recording system**](http://www.axona.com/) and processed with Axona's sorter **TINT**. 
 
-## Preprocessing in Tint and Python
-The preprocessing of the data operates through Python Jupyter notebooks. For the moment, preprocessing involves two third-party software that are:
-- Tint
-- SpikeInterface
-
-Plus, external spike sorters are required for performing unit extraction.
+## Preprocessing
+Data preprocessing is made in Python with Jupyter notebooks. 
 
 ### About the possible data files
 The recording file collected by Axona DacqUSB can be stored in two different formats. For this guide and analysis pipeline, two types of formats are taken into consideration: .bin (binary) files and .n (unit, e.g., .1 .2 .3, .4) files.
