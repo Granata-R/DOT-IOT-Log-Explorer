@@ -31,20 +31,22 @@ If not, you can do this by following the official [Mathworks guide for installin
 ## Preprocessing
 Data preprocessing is made in Python with Jupyter notebooks. 
 
-### About the possible data files
-The recording file collected by Axona DacqUSB can be stored in two different formats. For this guide and analysis pipeline, two types of formats are taken into consideration: .bin (binary) files and .n (unit, e.g., .1 .2 .3, .4) files.
+**Note: about the possible data files***
+The recording files collected by Axona DacqUSB can be saved in two different formats, *.bin* (continuous) and *.n* (snippets. E.g., *.1*, *.2*, *.3*, ..., *.numberOfChannels*). 
 
-In short, they are used for different purposes. The .n file is used to be loaded in Tint and export the EEG .txt table. The bin file, instead, which comprehends the raw data, is used to extract units and LFPs through dedicated Jupyter Notebooks.
+Both formats are used in our workflow. The *.bin* format can be used to extract units and LFPs through dedicated Jupyter Notebooks. The *.n* format (which can be obtained from the *.bin* through Axona DacqUSB converter) is used to export basic information about EEG, speed, coordinates, and other metrics in form of a text table (see next section).
 
-What is always necessary is the .n file (obtainable through Axona converter from the .bin file), because it is given to Tint and allows exporting the EEG table, containing EEG information, speed, coordinates, and other metrics such as the head turn angles. This table, in fact, is the first one to be processed.
+### Extracting the *.txt* table with TINT
+DOT-IOT Log Explorer was designed as a tailored system to analyze data extracted from Axona TINT. Therefore, this step is always required.
+1) First, make sure to have the *.n* files. If you have the *.bin* file only, you can convert it through Axona DacqUSB converter. If you encounter some limitations based on the sampling rate please check Axona DacqUSB manual.
+2) Load any of the *.n* files of the experiment in TINT. It doesn't matter which channel you select, because TINT spikes are not used. 
+3) Move all TINT spikes to *cluster 1* and *save* all.
+4) Export the table through the *Export* section. Make sure that the export sampling rate of the EEG (that is 250 Hz), is selected. For the rest, keep the default values.
 
-### Extracting the table from Tint
-By opening any .n file of the experiment into Tint, it is possible to retrieve some important information in the form of .txt table. To extract the table, open any .n file into Tint. Move all spikes to cluster 1. Then, export the table by making sure that the export sampling rate of the EEG, that is 250 Hz, is selected. For the rest, select the default values. Keep other default parameters in the export section.
+The result is a quite large *.txt* table file that contains basic information about EEG, speed, coordinates, and other metrics. Once you got this file, you can run the main GUI in DOT-IOT Log Explorer.
 
-The result is a quite large .txt file that contains the basic time series about the experiment. This .txt file is the first one that must be loaded in the main GUI.
-
-### Extracting spikes
-For our preprocessing, we opted not to rely on manual clustering with Tint. Instead, we preferred utilizing more advanced spike sorters such as KiloSort. To utilize these external sorters, you need to first install them on your local workstation. Then, assuming you have Python installed (see requirements), you can utilize the "extract..." file, which is a Jupyter Notebook that automatically initiates the sorting process. Sorting can only occur if a .bin file is provided to the notebook; otherwise, it's not possible to load the spikes.
+### Sorting spikes with SpikeInterface
+As mentioned in the section above, we have decided to rely on manual clustering with TINT. Instead, we preferred utilizing more advanced spike sorters such as KiloSort. To utilize these external sorters, you need to first install them on your local workstation. Then, assuming you have Python installed (see requirements), you can utilize the "extract..." file, which is a Jupyter Notebook that automatically initiates the sorting process. Sorting can only occur if a .bin file is provided to the notebook; otherwise, it's not possible to load the spikes.
 
 If you meet all the requirements, simply execute each block of the Jupyter Notebook to initiate the sorting. Note: the second block prompts the user with a dialog to choose the .bin file. The sorted data will be saved in a subfolder within the .bin file's directory.
 
