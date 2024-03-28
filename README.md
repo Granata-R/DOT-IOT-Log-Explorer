@@ -140,17 +140,17 @@ In addition, metrics related to the head turn angles can be extracted as well bo
 
 ### 3.2.2 Sleep
 In the *Sleep* tab there is a launcher (***Fig. 3.2.2.a***) for an edited version of [**AccuSleep**](https://github.com/zekebarger/AccuSleep).
-AccuSleep is a popular MATLAB software to do automatic and manual segmentation into wakefulness and rapid eye movement (REM), and non REM (NREM) sleep, basing on EEG and electromyogram (EMG). It comes already installed in DOT-IOT Log Explorer.
+AccuSleep is a popular MATLAB software to do automated and manual segmentation into wakefulness and rapid eye movement (REM), and non REM (NREM) sleep, basing on EEG and electromyogram (EMG). It comes already installed in DOT-IOT Log Explorer.
 
 ![Fig. 3.2.2.a](https://i.imgur.com/WtHKDlu.png)
 
 ***Fig. 3.2.2.a***
 
-If you don't have EMG you can use the TINT speed vector to aid yourself in manual sleep segmentation. DOT-IOT Log Explorer can automatically assign the movement epochs (as defined by the user in the *Movement* tab) to the wakefulness epochs in the AccuSleep GUI. 
+If you don't have EMG you can use the TINT speed vector to aid yourself in manual sleep segmentation. DOT-IOT Log Explorer can automatedally assign the movement epochs (as defined by the user in the *Movement* tab) to the wakefulness epochs in the AccuSleep GUI. 
 
 Once the data is saved, this edited version generates a *Sleep* folder (in the same folder of the original *.txt* file) where the sleep labels are saved. Thereupon, these labels can be loaded by the main GUI for displaying them and to check, for example, the unit metrics during wakefulness, REM, NREM.
 
-**Bonus: what if I want to do the automatic segmentation of sleep but I do not have the EMG?**
+**Bonus: what if I want to do the automated segmentation of sleep but I do not have the EMG?**
 A recent paper by H. Osanai et al, [Extracting electromyographic signals from multi-channel LFPs using independent component analysis without direct muscular recording](https://www.cell.com/cell-reports-methods/fulltext/S2667-2375(23)00105-4), showed that it is possible to extract a simulated EMG from LFPs.
 
 If you have the *.bin* recording you can use it for LFP extraction (see **LFP extraction** section), simulate the EMG through the *Sleep* module, and run the automated version of AccuSleep. Note that these functions require the Deep Learning toolbox (see **Requirements**) and have not been tested yet. 
@@ -190,9 +190,9 @@ The results module has the aim to get all the outputs from single experiments, a
 To use it, you want to save data from single experiment first. 
 ## 4.1 Saving the analyses and organizing the _group_ folders
 In the main GUI and in each child GUI, there is an orange *Save* button to export the output file, which will be stored in the *Results* folder. In the GUIs you can specify the mouse and test IDs.  
-### 4.1.1 About the automatic filename generation
+### 4.1.1 About the automated filename generation
 The mouse and test IDs are inserted in the output filename.
-Also, the filename automatically retrieves information regarding channel used, time window/behavior epochs used, and type of analysis performed. If multiple analyses are performed on the same file, with the same time window/behavior filters, then the filename will include labels just before the format. For example:
+Also, the filename automatedally retrieves information regarding channel used, time window/behavior epochs used, and type of analysis performed. If multiple analyses are performed on the same file, with the same time window/behavior filters, then the filename will include labels just before the format. For example:
 _MOUSEID_TESTID_Channel_Behavior_**[Spg][Mov][Sleep][Pac][Units]**.mat_ will include inform abount periodograms, movement patterns, sleep states, comodulation, and single units.
 ### 4.1.2 Organizing _group_ folders
 At the core of the results module there is the idea that the results obtained from main GUIs should be copied and organized in folders. Each folder may contain all the results sharing a particular experimental conditions (e.g., imagine to organize one folder with all animals treated with drug A, and a second folder with all animals treated with drug B. You can compare these two groups in a semi-automated manner). 
