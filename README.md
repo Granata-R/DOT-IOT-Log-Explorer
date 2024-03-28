@@ -1,6 +1,6 @@
 # DOT-IOT-Log-Explorer
 
-DOT-IOT-Log-Explorer is a Python/MATLAB software for broad analysis of electrophysiological data from freely behaving animals. It can be used for visualization and quantitative analysis of spectral properties of electroencephalogram (EEG) and local field potentials (LFPs), movement patterns, sleep patterns, neuronal activity, and phase-amplitude coupling, during specified time windows or behaviorally relevant epochs. 
+DOT-IOT-Log-Explorer is a Python/MATLAB software for broad analysis of electrophysiological data from freely behaving animals. It can be used for visualization and quantitative analysis of spectral properties of electroencephalogram (EEG) and local field potentials (LFPs), movement patterns, sleep patterns, single neuron activity, and phase-amplitude coupling, during specified time windows or behaviorally relevant epochs. 
 
 DOT-IOT-Log-Explorer was created by Rocco Granata, with inputs from Diletta Cavezza, as tailored software for the neuropsychopharmacology laboratory of Dr. Elvira De Leonibus. It is designed for, but not limited to, hippocampal recordings during memory tests, such as different object task (DOT) and identical object task (IOT). For reference on DOT and IOT you may read [**Role of the dorsal hippocampus in object memory load**](https://learnmem.cshlp.org/content/19/5/211) by Sannino S. et al.
 
