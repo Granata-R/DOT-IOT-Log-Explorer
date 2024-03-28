@@ -143,29 +143,25 @@ On the right panels, you can see the bars showing the mean raw or filtered score
 The unit explorer module (still in development) is designed for the analysis of place cell activity. It is possible to plot the spike activity in space and compute the distribution of single unit activity.
 
 # Results averaging
-## Saving the module analysis
-The analysis can be conducted at different levels using the various modules.
-The GUIs described above handle data regarding a single experiment.
-
-Within each GUI, there is an orange "Save" button alongside edit fields for specifying mouse and test IDs, the latter being useful for generating the filename for the output file. The output file is stored in the Results folder. 
-
+The results module has the aim to get all the outputs from single experiments, average them, and perform some simple statistical test. 
+To use it, you want to save data from single experiment first. 
+## Saving the analyses and organizing the _group_ folders
+In the main GUI and in each child GUI, there is an orange *Save* button to export the output file, which will be stored in the *Results* folder. In the GUIs you can specify the mouse and test IDs.  
 ### About the automatic filename generation
-For the moment, the filename contains information about: mouse ID, test ID, channel used, time window/behavior epochs used. If multiple analyses are performed on the same file, with the same time window/behavior filters, then the filename will include specific labels just before the format. These labels might appear as "FILENAME_"[Spg][Mov][Sleep][Pac][Units]".mat" if the analysis includes spectrum, movement, sleep, comodulation, and single units.
-
+The mouse and test IDs are inserted in the output filename.
+Also, the filename automatically retrieves information regarding channel used, time window/behavior epochs used, and type of analysis performed. If multiple analyses are performed on the same file, with the same time window/behavior filters, then the filename will include labels just before the format. For example:
+_MOUSEID_TESTID_Channel_Behavior_**[Spg][Mov][Sleep][Pac][Units]**.mat_ will include inform abount periodograms, movement patterns, sleep states, comodulation, and single units.
+### Organizing _group_ folders
+At the core of the results module there is the idea that the results obtained from main GUIs should be copied and organized in folders. Each folder may contain all the results sharing a particular experimental conditions (e.g., imagine to organize one folder with all animals treated with drug A, and a second folder with all animals treated with drug B. You can compare these two groups in a semi-automated manner). 
+It is advided to do this by copying the files in the *Results* folder, keeping the original output in its place.
 ## Using the Results module
-Finally, the results module has the aim to get all the outputs from single experiments and averaging them. This "averaging" works on multiple levels depending on the types of analysis that have been made. 
-### Organizing group folders
-At the core of the results module there is the idea that the results obtained from main GUIs should be copied and organized in folders. Each folder may contain all the results sharing a particular experimental conditions (e.g., you might have a folder where all male animal results are saved, and the other for females). 
-It is probably better to do this by duplicating the files in the /Results/ folder. In this way the "raw" results will remain, while you can save isntead the group folder anywhere.
-
 ## Results module
-The results module is still in development because at the moment is a bit messy.
-For the moment, you can use to perform the following opeartions:
-1) periodogram averaging
-2) analysis of sleep phases (REM, NREM): how much they last and how much are they scattered
-3) analysis of movement. Half a dozen of metrics are available at the moment! 
-4) comodulation analysis
-5) spike analysis (to be done)
+For the moment, you can use to perform the following things:
+1) Periodogram averaging and nonparametric tests on desired frequency bands.
+2) Quantification of sleep phases (REM, NREM): how much they last and how much are they scattered.
+3) Quantitative analysis of movement. Half a dozen of metrics are available at the moment: they include running, bursts, thigmotaxis, head turn, circular variance... 
+4) Comodulation analysis.
+5) Spike analysis.
 
-The average results are computed both in terms of distributions and in terms of box chart. While generating box chart the program automatically computes non parametric tests.
-While averaging the periodogram, also in that case non parameteric tests are used for each pyssiologically relevant interval of frequencies.
+# About this guide
+This guide has been written by Rocco Granata in March 28th, 2024. The idea is to give the reader an idea of what the software can do. In the future, it will be implemented with more details about how to use specific handles.
