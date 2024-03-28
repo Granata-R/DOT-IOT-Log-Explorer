@@ -38,7 +38,7 @@ If not, you can do this by following the official [Mathworks guide for installin
 
 - A **spike sorter** of interest (optional). Some sorters (e.g., spyKING CIRCUS; Tridesclous) are directly installed with SpikeInterface. For other sorters, please refer to this [link](https://spikeinterface.readthedocs.io/en/latest/install_sorters.html).
   
-- **Python (Jupyter) + SpikeInterface**. Python Jupyter notebooks and [SpikeInterface](https://github.com/SpikeInterface/spikeinterface/tree/main) are necessary for spike and LFP processing. One quick way to install all these requirements is to follow the [SpikeInterface beginner guide for Python installation](https://github.com/SpikeInterface/spikeinterface/tree/main/installation_tips).
+- **Python (Jupyter) + SpikeInterface**. Python Jupyter notebooks and [SpikeInterface](https://github.com/SpikeInterface/spikeinterface/tree/main) are necessary for spike and LFP processing. One quick way to install all of them is to follow the [SpikeInterface beginner guide for Python installation](https://github.com/SpikeInterface/spikeinterface/tree/main/installation_tips).
 
 ## 2 Preprocessing
 Data preprocessing is made with Axona TINT and custom Jupyter notebooks. 
