@@ -2,12 +2,9 @@
 
 DOT-IOT Log Explorer is a Python/MATLAB software for broad analysis of electrophysiological data from freely behaving animals. It can be used for visualization and quantitative analysis of spectral properties of electroencephalogram (EEG) and local field potentials (LFPs), movement patterns, sleep patterns, single neuron activity, and phase-amplitude coupling, during specified time windows or behaviorally relevant epochs. 
 
-DOT-IOT Log Explorer was created by Rocco Granata, with inputs from Diletta Cavezza, as tailored software for the neuropsychopharmacology laboratory of Dr. Elvira De Leonibus. Originally designed for hippocampal recordings during memory tests, such as the different object task (DOT) and the identical object task (IOT)<sup>[1]</sup>, its versatility allows for potential application in a range of behavioral studies.
+DOT-IOT Log Explorer has been created by Rocco Granata, with inputs from Diletta Cavezza, as tailored software for the neuropsychopharmacology laboratory of Dr. Elvira De Leonibus. Originally designed for hippocampal recordings during memory tests, such as the different object task (DOT) and the identical object task (IOT)<sup>[1]</sup>, its versatility allows for potential application in a range of behavioral studies.
 
 ![DOT IOT Log Explorer](https://i.imgur.com/2qP9W6E.png)
-
-
-The software leverages compatibility with state-of-the-art computational tools in systems neuroscience. These include [SpikeInterface](https://github.com/SpikeInterface/spikeinterface) (for standardized data extraction), [Kilosort](https://github.com/MouseLand/Kilosort) (for spike sorting), [AccuSleep](https://github.com/zekebarger/AccuSleep) (for semi-automated sleep segmentation), [ANY-maze](https://www.any-maze.com/) (for manual review of behavior through key logs). 
 
 **Reference**
 
@@ -16,38 +13,41 @@ The software leverages compatibility with state-of-the-art computational tools i
 # Quick installation and use guide 
 ## 1 Requirements
 
-- So far, the workflow has been tested on **Windows** only.
+The software leverages compatibility with state-of-the-art computational tools in systems neuroscience. These include [SpikeInterface](https://github.com/SpikeInterface/spikeinterface) (for standardized data extraction), [Kilosort](https://github.com/MouseLand/Kilosort) (for spike sorting), [AccuSleep](https://github.com/zekebarger/AccuSleep) (for semi-automated sleep segmentation), [ANY-maze](https://www.any-maze.com/) (for manual review of behavior through key logs). 
+Basic requirements are below.
 
-- **Python (Jupyter) + SpikeInterface** is always needed to preprocess the recording files. Since the pipeline assumes to preprocess the recording files via **SpikeInterface (always needed)**, please use the [SpikeInterface guides](https://github.com/SpikeInterface/spikeinterface) to set up the environment.
+- **Windows** operating system.
 
-- **MATLAB** is required. Any version above **R2019** should work fine.
-Ensure that you have installed these add-ons:
+- [**Axona DacqUSB**](http://www.axona.com/) as recording system + Axona's sorter **TINT**.
 
-- 1) **Image Processing Toolbox** (always required);
-
-- 2) **Signal Processing Toolbox** (always required);
-
-- 3) **Statistics and Machine Learning Toolbox** (might be required for certain actions).
-   
-- 5) **Deep Learning Toolbox** (might be required for certain actions).
-
+- **MATLAB**. Any version above **R2019** should work fine.
+Ensure that you have installed these add-ons. 
 If not, you can do this by following the official [Mathworks guide for installing Add-Ons](https://it.mathworks.com/help/matlab/matlab_env/get-add-ons.html).
 
-- A **spike sorter** (optional). Some sorters (e.g., spyKING CIRCUS; Tridesclous) are directly installed with SpikeInterface. For other sorters, please refer to this [link](https://spikeinterface.readthedocs.io/en/latest/install_sorters.html).
+   - **Image Processing Toolbox** (always required);
 
-- For the moment, the workflow is limited to data recorded through the [**Axona DacqUSB recording system**](http://www.axona.com/) and processed with Axona's sorter **TINT**. 
+   - **Signal Processing Toolbox** (always required);
+
+   - **Statistics and Machine Learning Toolbox** (might be required for certain actions).
+   
+   - **Deep Learning Toolbox** (might be required for certain actions).
+
+- A **spike sorter** of interest (optional). Some sorters (e.g., spyKING CIRCUS; Tridesclous) are directly installed with SpikeInterface. For other sorters, please refer to this [link](https://spikeinterface.readthedocs.io/en/latest/install_sorters.html).
+  
+- **Python (Jupyter) + SpikeInterface**. Python Jupyter notebooks and [SpikeInterface](https://github.com/SpikeInterface/spikeinterface/tree/main) are necessary for spike and LFP processing. One quick way to install all these requirements is to follow the [SpikeInterface beginner guide for Python installation](https://github.com/SpikeInterface/spikeinterface/tree/main/installation_tips).
 
 ## 2 Preprocessing
 Data preprocessing is made with Axona TINT and custom Jupyter notebooks. 
 
-**Note: about the possible data formats***
+**Note: about the possible data formats**
+
 The recording files collected by Axona DacqUSB can be saved in two main formats, *.bin* (continuous) and *.n* (snippets. E.g., *.1*, *.2*, *.3*, ..., *.numberOfChannels*). 
 
 Both formats are used in our workflow. The *.bin* format can be used to extract units and LFPs through dedicated Jupyter Notebooks. The *.n* format (which can be obtained from the *.bin* through Axona DacqUSB converter) is used to export basic information about EEG, speed, coordinates, and other metrics in form of a text table (see next section). The latter is always required to run DOT-IOT Log Explorer.
 
 ### 2.1 TINT preprocessing
 Among the other things, Axona TINT allows to export a *.txt* table file that contains basic information about EEG, speed, coordinates, and other metrics, from the original *.n* file. 
-The goal of this step is to "simulate" a spike sorting in order to get this table. The table is always required for launching DOT-IOT Log Explorer. Actual spike sorting and LFPs can be added later by following the next sections of preprocessing.
+The goal of this step is to "simulate" a spike sorting in order to get this table. The table is always required for launching DOT-IOT Log Explorer. Actual spike sorting and LFPs can be added by following the next sections of preprocessing.
 
 **Steps for extracting the *.txt* table with TINT using the *.n* file**
 1) First, make sure to have the *.n* files. If you have the *.bin* file only, you can convert it through Axona DacqUSB converter. If you encounter some limitations based on the sampling rate please check Axona DacqUSB manual.
@@ -56,7 +56,7 @@ The goal of this step is to "simulate" a spike sorting in order to get this tabl
 4) Export the table through the *Export* section. Make sure that the export sampling rate of the EEG (that is 250 Hz), is selected. For the rest, keep the default values.
 
 ### 2.2 Sorting spikes with SpikeInterface in Jupyter
-Our current workflow does not consider the sorting made with TINT, favoring external sorters such as KiloSort. 
+Our current workflow overlooks TINT's sorting, preferring Kilosort and manual clustering in Phy.
 
 1) **Spike sorting**. An automated sorting can be made using the custom Jupyter Notebook *1a - SpikeSorting_AxonaDacqUSB.ipynb* with leverages SpikeInterface. The only thing required is the *.bin* recording. The output is standardized regardless of the sorter used.
 2) **Manual curation**. Found units can be manually curated using [Phy](https://github.com/cortex-lab/phy). Phy should have already been installed via SpikeInterface.
