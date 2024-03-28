@@ -107,22 +107,27 @@ If you have the *.bin* recording you can use it for LFP extraction (see **LFP ex
 The quality of the extracted EMG seems to be dependent on the placement of the electrodes. The shallower they are, the better it is for this purpose.
 
 ## Comodulation module
-The comodulation module allows to perform analysis of theta vs. gamma components of the source signal, which can be EEG or LFP.
+The comodulation module allows to calculate some metrics of phase-amplitude coupling (PAC) between the theta and gamma components of source signal.
+Three currently available PAC metrics are:
+1) Mean vector length (MVL)
+2) Phase locking value (PLV)
+3) Modulation index (MI)
 
-For the comodulatio I based mostly on three metrics which are phase locking value (PLV), MEAN VECTOR LENCGTH ( MVL), modulation index (MI). Furthermore, a fourth metric is the cross correlation. the two signals are the theta and gamma components of the original trace.
+Plus, corr-correlation between theta and gamma can also be calculated.
 
-The GUI appears as follows.
+The PAC can be calculted in different ways, for example by taking into account filtering options like time window and behavior from the main GUI.
+
 ### Comodulograms
-The left panel encompass the possibility to compute a "comodulogram". this graph computes the comodulation with any of the three phase-amplitude coupling methods MVL, PLV or MI) between fixed bins of frequency. Specifically, in the hippocampus the "driver" is lower frequencies, while the "signal" is higher frequency. in the hippocampus they correspond to to theta and gamma, mostly.
-the typical shape of the comodulogram is a cloud shape whose bounding box fall within the theta (x axis) and gamma (y axis) ranges.
+In the comodulation module it is possible to plot comodulograms (left panel). The comodulogram shows in color code the PAC between different pairs of frequencies. Usually, lower frequency range encompassing theta are on the x axis, and higher frequency range encopassing gamma range is on the y axis.
 
-the comodulogram can be computed as well upon filtering the original trace according to the time window or behavioral epochs.
+Comodulograms might be used for having an overview of the PAC in the frequency domain. 
+You can save them for each experiment and average them in the **Results** module (see below).
 
 ### PAC-per-second
-The rightmost panel are dedicated to the PAC per second. As the name suggests, this code computes these metrics for each second of the trace. The result is a bar that can be visualized in the original main GUI, by selecting the appropriate radio buttons.
-The PAC per second metric is also endowed by a shuffling control. You can decide how many times you want to shuffle. Based on the shuffling repetitions a surrogate PAC-per-second is generated and subtracted statistically to the raw data.
+It is also possible to calculate the PAC for each second. The result can be visualized as a bar graph in the original main GUI, in the EEG axis, by selecting the appropriate radio buttons.
+This calculation is endowed by a shuffling control, which can be used to generate a surrogate distribution and filter the data. 
 
-On the right mostpanels, you can see the bars showing the mean raw or filtered scores during time or behavioral epochs. 
+On the right mostpanels, you can see the bars showing the mean raw or filtered scores during time window and behavioral epochs, according to main GUI. 
 
 ## Unit explorer module
 The unit explorer module is still in development. For the moment, it allows the computation of the distributions of the spiking activity of single units. On the right panel, the place cell activity in space can be explored with different methods.
