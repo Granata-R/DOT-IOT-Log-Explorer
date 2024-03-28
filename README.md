@@ -75,6 +75,14 @@ The behavioral epochs might be referred to animal speed, object exploration, int
 
 The right block shows some initial results related to the explored data, after filtering it with the selected time window and behavioral epochs. The mean activity of the units is on the top, while periodograms are on the bottom. All results are presented in two pairs of colors: yellow vs. magenta for discriminating the selected time window vs. all other times, respectively, and green vs. red for defining *Behavior YES* vs. *Behavior NO*, respectively. This color pattern is inherited by child apps, described below.
 
+## Unwinding module
+The unwinding for object exploration, or for any type of behavior the user wants to segment, can be done by clicking on the Unwind button in the main GUI. 
+This button launches a dialog which basically is a time-stamped keylogger. Through this dialog, by pressing the keys 1 2 3 7 8 9 according to e.g, exloration of object 1 2 3 7 8 9, the user can create a vector with the object exploration epochs. after saving it, the output can be saved in a subfolder of the original text file. Then, it can be loaded in the main GUI by clicking this button.
+
+### Exploring single keys
+Once you have perfored your unwinding, you can see what happens to the periodogram while the animal was exploring all object, or a single object (just use the dropdown menu). furthermore you can limit the periodogram and unit computation to the first n seconds of exploration.
+finally, since precise unwinding is difficult and you could not be as fast as you should, you can also shift everything on the left of n seconds usig this button. You can also move everything on the right if you want. it might be useful for "anticipatory" behavior!
+
 ## Analysis of movement and sleep patterns
 Bly clicking on the *Movement and sleep* button in the main GUI, a submodule for this analysis is launched.
 
@@ -127,18 +135,10 @@ You can save them for each experiment and average them in the **Results** module
 It is also possible to calculate the PAC for each second. The result can be visualized as a bar graph in the original main GUI, in the EEG axis, by selecting the appropriate radio buttons.
 This calculation is endowed by a shuffling control, which can be used to generate a surrogate distribution and filter the data. 
 
-On the right mostpanels, you can see the bars showing the mean raw or filtered scores during time window and behavioral epochs, according to main GUI. 
+On the right panels, you can see the bars showing the mean raw or filtered scores during time window and behavioral epochs, according to main GUI. 
 
 ## Unit explorer module
-The unit explorer module is still in development. For the moment, it allows the computation of the distributions of the spiking activity of single units. On the right panel, the place cell activity in space can be explored with different methods.
-
-## Unwinding module
-The unwinding for object exploration, or for any type of behavior the user wants to segment, can be done by clicking on the Unwind button in the main GUI. 
-This button launches a dialog which basically is a time-stamped keylogger. Through this dialog, by pressing the keys 1 2 3 7 8 9 according to e.g, exloration of object 1 2 3 7 8 9, the user can create a vector with the object exploration epochs. after saving it, the output can be saved in a subfolder of the original text file. Then, it can be loaded in the main GUI by clicking this button.
-
-### Exploring single keys
-Once you have perfored your unwinding, you can see what happens to the periodogram while the animal was exploring all object, or a single object (just use the dropdown menu). furthermore you can limit the periodogram and unit computation to the first n seconds of exploration.
-finally, since precise unwinding is difficult and you could not be as fast as you should, you can also shift everything on the left of n seconds usig this button. You can also move everything on the right if you want. it might be useful for "anticipatory" behavior!
+The unit explorer module (still in development) is designed for the analysis of place cell activity. It is possible to plot the spike activity in space and compute the distribution of single unit activity.
 
 # Results averaging
 ## Saving the module analysis
