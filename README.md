@@ -164,4 +164,4 @@ For the moment, you can use to perform the following things:
 5) Spike analysis.
 
 # About this guide
-This guide has been written by Rocco Granata in March 28th, 2024. The idea is to give the reader an idea of what the software can do. In the future, it will be implemented with more details about how to use specific handles.
+This guide has been written by Rocco Granata in March 28<sub>th</sub>, 2024. The idea is to give the reader an idea of what the software can do. In the future, it will be implemented with more details about how to use specific handles.
