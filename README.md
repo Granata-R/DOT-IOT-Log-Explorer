@@ -10,6 +10,10 @@ DOT-IOT Log Explorer has been created by Rocco Granata, with inputs from Diletta
 
 <sup>[1]</sup>Sannino, S., Russo, F., Torromino, G., Pendolino, V., Calabresi, P., & De Leonibus, E. (2012). Role of the dorsal hippocampus in object memory load. In Learning &amp; Memory (Vol. 19, Issue 5, pp. 211–218). Cold Spring Harbor Laboratory. https://doi.org/10.1101/lm.025213.111 
 
+# Movie
+
+***[This short movie](https://i.imgur.com/tTH4YRX.gif)*** shows an example of interaction with the main graphical user interface (GUI). Several child modules can then be launched from this main GUI, as described in the instruction below.
+
 # Quick installation and use guide 
 ## 1 Requirements
 
@@ -72,7 +76,7 @@ It requires the *.bin* file and, similarly to the spike one, its output is in *.
 Once you've completed preprocessing the relevant information, you can delve into it using DOT IOT Log Explorer, which is accessible via MATLAB either through AppDesigner or by directly executing the command "DOT_IOT_Log_Explorer" in the command window.
 
 ## 3.1 DOT-IOT Log Explorer
-At the top left, you'll find the *Load* button, allowing you to select the *.txt* table from TINT/Jupyter. Among the check buttons on the right, the most crucial ones during this phase are *LFPs* and *Spikes*, enabling you to choose whether to import this additional information. ***Fig. 3.1.a*** shows the graphical user interface (GUI) before loading the data.
+At the top left, you'll find the *Load* button, allowing you to select the *.txt* table from TINT/Jupyter. Among the check buttons on the right, the most crucial ones during this phase are *LFPs* and *Spikes*, enabling you to choose whether to import this additional information. ***Fig. 3.1.a*** shows the GUI before loading the data.
 
 ![Fig. 3.1.a](https://i.imgur.com/jODL3vH.png)
 
@@ -107,9 +111,6 @@ Last, you can shift the behavioral state vector on the left or right of N second
 ![Fig. 3.1.2.a](https://i.imgur.com/2qP9W6E.png)
 
 ***Fig. 3.1.2.a***
-
-***Movie 3.1.2.a*** shows an example of main GUI interaction.
-***[Movie 3.1.2.a](https://i.imgur.com/tTH4YRX.gif)*** _(Click to open.)_
 
 ## 3.2 Analysis of movement and sleep patterns
 Bly clicking on the *Movement and sleep* button in the main GUI, a submodule for this analysis is launched.
@@ -156,14 +157,14 @@ If you have the *.bin* recording you can use it for LFP extraction (see **LFP ex
 The quality of the extracted EMG seems to be dependent on the placement of the electrodes. The shallower they are, the better it is for this purpose.
 
 ## 3.3 Comodulation module
-The comodulation module (***Fig. 3.3.a***) allows to calculate some metrics of phase-amplitude coupling (PAC) between the theta and gamma components of source signal.
+The comodulation module (***Movie 3.3.a***) allows to calculate some metrics of phase-amplitude coupling (PAC) between the theta and gamma components of source signal.
 Three currently available PAC metrics are:
 1) Mean vector length (MVL)
 2) Phase locking value (PLV)
 3) Modulation index (MI)
 
-![Fig. 3.3.a](https://i.imgur.com/SYij7E7.gif)
-***Fig. 3.3.a***
+![Movie 3.3.a](https://i.imgur.com/SYij7E7.gif)
+***Movie 3.3.a***
 
 Plus, corr-correlation between theta and gamma can also be calculated.
 
