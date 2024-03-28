@@ -75,13 +75,15 @@ The behavioral epochs might be referred to animal speed, object exploration, int
 
 The right block shows some initial results related to the explored data, after filtering it with the selected time window and behavioral epochs. The mean activity of the units is on the top, while periodograms are on the bottom. All results are presented in two pairs of colors: yellow vs. magenta for discriminating the selected time window vs. all other times, respectively, and green vs. red for defining *Behavior YES* vs. *Behavior NO*, respectively. This color pattern is inherited by child apps, described below.
 
-## Unwinding module
-The unwinding for object exploration, or for any type of behavior the user wants to segment, can be done by clicking on the Unwind button in the main GUI. 
-This button launches a dialog which basically is a time-stamped keylogger. Through this dialog, by pressing the keys 1 2 3 7 8 9 according to e.g, exloration of object 1 2 3 7 8 9, the user can create a vector with the object exploration epochs. after saving it, the output can be saved in a subfolder of the original text file. Then, it can be loaded in the main GUI by clicking this button.
+## Key-logging behavioral states
+The unwinding module is used for custom time-stamped key logging of behavioral states. It is conceived to be used in parallel with the video recording of the experiment. 
+
+During the unwinding, you can press the keys 1, 2, 3, 7, 8, 9 for each behavioral state.
+You can use this module for defining epochs of active object exploration, stereotypies, grooming, social interaction, etc. For the moment it is limited to 6 behavioral states.
 
 ### Exploring single keys
-Once you have perfored your unwinding, you can see what happens to the periodogram while the animal was exploring all object, or a single object (just use the dropdown menu). furthermore you can limit the periodogram and unit computation to the first n seconds of exploration.
-finally, since precise unwinding is difficult and you could not be as fast as you should, you can also shift everything on the left of n seconds usig this button. You can also move everything on the right if you want. it might be useful for "anticipatory" behavior!
+Once you have perfored your unwinding, you can see what happens to the periodogram, units, and some of the metrics described below, during these behavioral states. With the dropdown menu in the main GUI you can select wheter to join epochs corresponding to all keys, or to browse just a single key. You can consider the first N seconds for each epoch if you want to.
+Last, you can shift the behavioral state vector on the left or right of N seconds. This latter option can be used to adjust delay in logging, or to investigate what just before or after a certain behavior.
 
 ## Analysis of movement and sleep patterns
 Bly clicking on the *Movement and sleep* button in the main GUI, a submodule for this analysis is launched.
