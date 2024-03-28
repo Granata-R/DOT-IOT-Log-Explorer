@@ -4,7 +4,8 @@ DOT-IOT Log Explorer is a Python/MATLAB software for broad analysis of electroph
 
 DOT-IOT Log Explorer was created by Rocco Granata, with inputs from Diletta Cavezza, as tailored software for the neuropsychopharmacology laboratory of Dr. Elvira De Leonibus. Originally designed for hippocampal recordings during memory tests, such as the different object task (DOT) and the identical object task (IOT)<sup>[1]</sup>, its versatility allows for potential application in a range of behavioral studies.
 
-![DOT IOT Log Explorer](https://i.imgur.com/tTH4YRX.gif)
+![DOT IOT Log Explorer](https://i.imgur.com/2qP9W6E.png)
+
 
 The software leverages compatibility with state-of-the-art computational tools in systems neuroscience. These include [SpikeInterface](https://github.com/SpikeInterface/spikeinterface) (for standardized data extraction), [Kilosort](https://github.com/MouseLand/Kilosort) (for spike sorting), [AccuSleep](https://github.com/zekebarger/AccuSleep) (for semi-automated sleep segmentation), [ANY-maze](https://www.any-maze.com/) (for manual review of behavior through key logs). 
 
@@ -71,13 +72,13 @@ It requires the *.bin* file and, similarly to the spike one, its output is in *.
 Once you've completed preprocessing the relevant information, you can delve into it using DOT IOT Log Explorer, which is accessible via MATLAB either through AppDesigner or by directly executing the command "DOT_IOT_Log_Explorer" in the command window.
 
 ## 3.1 DOT-IOT Log Explorer
-At the top left, you'll find the *Load* button, allowing you to select the *.txt* table from TINT/Jupyter. Among the check buttons on the right, the most crucial ones during this phase are *LFPs* and *Spikes*, enabling you to choose whether to import this additional information. Fig. 3.1.a shows the graphical user interface (GUI) before loading the data.
+At the top left, you'll find the *Load* button, allowing you to select the *.txt* table from TINT/Jupyter. Among the check buttons on the right, the most crucial ones during this phase are *LFPs* and *Spikes*, enabling you to choose whether to import this additional information. ***Fig. 3.1.a*** shows the graphical user interface (GUI) before loading the data.
 
 ![Fig. 3.1.a](https://i.imgur.com/jODL3vH.png)
 
 ***Fig. 3.1.a***
 
-Fig. 3.1.b shows an example of the GUI after loading the data. The GUI might be divided in three columns or blocks. The left block contains handles for user control. These involve edit field to select a time window or to determine which behavioral epochs to use. The center block contains plot for data visualization. Going from top to bottom, there are:
+***Fig. 3.1.b*** shows an example of the GUI after loading the data. The GUI might be divided in three columns or blocks. The left block contains handles for user control. These involve edit field to select a time window or to determine which behavioral epochs to use. The center block contains plot for data visualization. Going from top to bottom, there are:
 1) EEG/LFP time series.
 2) Units raster plot.
 3) Behavioral epochs.
@@ -101,11 +102,14 @@ If you have ANY-maze, you can import both coordinates and logged information thr
 
 ### 3.1.2 Exploring single keys
 Once you have perfored your unwinding, you can see what happens to the periodogram, units, and some of the metrics described below, during these behavioral states. With the dropdown menu in the main GUI you can select wheter to join epochs corresponding to all keys, or to browse just a single key. You can consider the first N seconds for each epoch if you want to.
-Last, you can shift the behavioral state vector on the left or right of N seconds. This latter option can be used to adjust delay in logging, or to investigate what just before or after a certain behavior. Fig. 3.1.2.a shows the GUI upon loading and selecting manually logged object exploration epochs.
+Last, you can shift the behavioral state vector on the left or right of N seconds. This latter option can be used to adjust delay in logging, or to investigate what just before or after a certain behavior. ***Fig. 3.1.2.a*** shows the GUI upon loading and selecting manually logged object exploration epochs.
 
 ![Fig. 3.1.2.a](https://i.imgur.com/2qP9W6E.png)
 
 ***Fig. 3.1.2.a***
+
+***Movie 3.1.2.a*** shows an example of main GUI interaction.
+***[Movie 3.1.2.a](https://i.imgur.com/tTH4YRX.gif)*** _(Click to open.)_
 
 ## 3.2 Analysis of movement and sleep patterns
 Bly clicking on the *Movement and sleep* button in the main GUI, a submodule for this analysis is launched.
@@ -119,22 +123,22 @@ The speed time series and the cumulative distance can be segmented into movement
 3) Bursts (sustained high-accelleration epochs)
 
 The movement state segmentation is set with two hard thresholds. With the first one the user can select the minimum cm/s (or cm/s^2 for bursts). The second is minimal duration in seconds.
-Fig. 3.2.1.a shows an example of color coded speed and distance series.
+***Movie 3.2.1.a*** shows an example of color coded speed and distance series.
 
-![Fig. 3.2.1.a](https://i.imgur.com/prtLXns.gif)
+![Movie 3.2.1.a](https://i.imgur.com/prtLXns.gif)
 
 ***Fig. 3.2.1.a***
 
-In this section it is also possible to retrieve the arena borders (with some manual refinement) and calculate the tigmotaxis score (Fig. 3.2.1.b).
+In this section it is also possible to retrieve the arena borders (with some manual refinement) and calculate the tigmotaxis score (***Fig. 3.2.1.a***).
 
-![Fig. 3.2.1.b](https://i.imgur.com/IjiM87j.png)
+![Fig. 3.2.1.a](https://i.imgur.com/IjiM87j.png)
 
 ***Fig. 3.2.1.b***
 
 In addition, metrics related to the head turn angles can be extracted as well both in the whole arena and in the center of it. These metrics might be employed to infer exploration of the open field and some stereotypies.
 
 ### 3.2.2 Sleep
-In the *Sleep* tab there is a launcher (Fig. 3.2.2.a) for an edited version of [**AccuSleep**](https://github.com/zekebarger/AccuSleep).
+In the *Sleep* tab there is a launcher (***Fig. 3.2.2.a***) for an edited version of [**AccuSleep**](https://github.com/zekebarger/AccuSleep).
 AccuSleep is a popular MATLAB software to do automatic and manual segmentation into wakefulness and rapid eye movement (REM), and non REM (NREM) sleep, basing on EEG and electromyogram (EMG). It comes already installed in DOT-IOT Log Explorer.
 
 ![Fig. 3.2.2.a](https://i.imgur.com/WtHKDlu.png)
@@ -152,7 +156,7 @@ If you have the *.bin* recording you can use it for LFP extraction (see **LFP ex
 The quality of the extracted EMG seems to be dependent on the placement of the electrodes. The shallower they are, the better it is for this purpose.
 
 ## 3.3 Comodulation module
-The comodulation module (Fig. 3.3.a) allows to calculate some metrics of phase-amplitude coupling (PAC) between the theta and gamma components of source signal.
+The comodulation module (***Fig. 3.3.a***) allows to calculate some metrics of phase-amplitude coupling (PAC) between the theta and gamma components of source signal.
 Three currently available PAC metrics are:
 1) Mean vector length (MVL)
 2) Phase locking value (PLV)
@@ -178,7 +182,7 @@ This calculation is endowed by a shuffling control, which can be used to generat
 On the right panels, you can see the bars showing the mean raw or filtered scores during time window and behavioral epochs, according to main GUI. 
 
 ## 3.4 Unit explorer module
-The unit explorer module (still in development) is designed for the analysis of place cell activity. It is possible to plot the spike activity (Fig. 3.4.a) in space and compute the distribution of single unit activity.
+The unit explorer module (still in development) is designed for the analysis of place cell activity. It is possible to plot the spike activity (***Fig. 3.4.a***) in space and compute the distribution of single unit activity.
 
 # 4 Results averaging
 The results module has the aim to get all the outputs from single experiments, average them, and perform some simple statistical test. 
