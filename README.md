@@ -166,7 +166,7 @@ Three currently available PAC metrics are:
 ![Movie 3.3.a](https://i.imgur.com/SYij7E7.gif)
 ***Movie 3.3.a***
 
-Plus, corr-correlation between theta and gamma can also be calculated.
+Plus, cross-correlation between theta and gamma can also be calculated.
 
 The PAC can be calculted in different ways, for example by taking into account filtering options like time window and behavior from the main GUI.
 
