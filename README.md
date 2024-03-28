@@ -121,17 +121,27 @@ The speed time series and the cumulative distance can be segmented into movement
 The movement state segmentation is set with two hard thresholds. With the first one the user can select the minimum cm/s (or cm/s^2 for bursts). The second is minimal duration in seconds.
 Fig. 3.2.1.a shows an example of color coded speed and distance series.
 
-![Fig. 3.2.1.a](https://i.imgur.com/Lq4daLQ.mp4)
+![Fig. 3.2.1.a](https://i.imgur.com/prtLXns.gif)
+
 ***Fig. 3.2.1.a***
 
-In this section it is also possible to retrieve the arena borders (with some manual refinement) and calculate the tigmotaxis score.
+In this section it is also possible to retrieve the arena borders (with some manual refinement) and calculate the tigmotaxis score (Fig. 3.2.1.b).
+
+![Fig. 3.2.1.b](https://i.imgur.com/IjiM87j.png)
+
+***Fig. 3.2.1.b***
+
 In addition, metrics related to the head turn angles can be extracted as well both in the whole arena and in the center of it. These metrics might be employed to infer exploration of the open field and some stereotypies.
 
 ### 3.2.2 Sleep
-In the *Sleep* tab there is a launcher for an edited version of [**AccuSleep**](https://github.com/zekebarger/AccuSleep).
+In the *Sleep* tab there is a launcher (Fig. 3.2.2.a) for an edited version of [**AccuSleep**](https://github.com/zekebarger/AccuSleep).
 AccuSleep is a popular MATLAB software to do automatic and manual segmentation into wakefulness and rapid eye movement (REM), and non REM (NREM) sleep, basing on EEG and electromyogram (EMG). It comes already installed in DOT-IOT Log Explorer.
 
-As a default option, if you don't have EMG you can use the speed vector to do a manual segmentation of sleep states. To save some time, DOT-IOT Log Explorer can automatically assign the movement epochs (as defined by the user in the *Movement* tab) to the wakefulness epochs in the AccuSleep GUI. 
+![Fig. 3.2.2.a](https://i.imgur.com/WtHKDlu.png)
+
+***Fig. 3.2.2.a***
+
+If you don't have EMG you can use the TINT speed vector to aid yourself in manual sleep segmentation. DOT-IOT Log Explorer can automatically assign the movement epochs (as defined by the user in the *Movement* tab) to the wakefulness epochs in the AccuSleep GUI. 
 
 Once the data is saved, this edited version generates a *Sleep* folder (in the same folder of the original *.txt* file) where the sleep labels are saved. Thereupon, these labels can be loaded by the main GUI for displaying them and to check, for example, the unit metrics during wakefulness, REM, NREM.
 
@@ -142,11 +152,14 @@ If you have the *.bin* recording you can use it for LFP extraction (see **LFP ex
 The quality of the extracted EMG seems to be dependent on the placement of the electrodes. The shallower they are, the better it is for this purpose.
 
 ## 3.3 Comodulation module
-The comodulation module allows to calculate some metrics of phase-amplitude coupling (PAC) between the theta and gamma components of source signal.
+The comodulation module (Fig. 3.3.a) allows to calculate some metrics of phase-amplitude coupling (PAC) between the theta and gamma components of source signal.
 Three currently available PAC metrics are:
 1) Mean vector length (MVL)
 2) Phase locking value (PLV)
 3) Modulation index (MI)
+
+![Fig. 3.3.a](https://i.imgur.com/SYij7E7.gif)
+***Fig. 3.3.a***
 
 Plus, corr-correlation between theta and gamma can also be calculated.
 
@@ -165,7 +178,7 @@ This calculation is endowed by a shuffling control, which can be used to generat
 On the right panels, you can see the bars showing the mean raw or filtered scores during time window and behavioral epochs, according to main GUI. 
 
 ## 3.4 Unit explorer module
-The unit explorer module (still in development) is designed for the analysis of place cell activity. It is possible to plot the spike activity in space and compute the distribution of single unit activity.
+The unit explorer module (still in development) is designed for the analysis of place cell activity. It is possible to plot the spike activity (Fig. 3.4.a) in space and compute the distribution of single unit activity.
 
 # 4 Results averaging
 The results module has the aim to get all the outputs from single experiments, average them, and perform some simple statistical test. 
