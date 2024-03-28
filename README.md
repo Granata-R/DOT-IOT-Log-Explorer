@@ -78,7 +78,7 @@ The right block shows some initial results related to the explored data, after f
 ## Key-logging behavioral states
 The unwinding module is used for custom time-stamped key logging of behavioral states. It is conceived to be used in parallel with the video recording of the experiment. 
 
-During the unwinding, you can press the keys 1, 2, 3, 7, 8, 9 for each behavioral state.
+During the unwinding, you can press the keys *1, 2, 3, 7, 8, 9* for each behavioral state.
 You can use this module for defining epochs of active object exploration, stereotypies, grooming, social interaction, etc. For the moment it is limited to 6 behavioral states.
 
 ### Exploring single keys
