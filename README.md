@@ -13,7 +13,7 @@ The software leverages compatibility with state-of-the-art computational tools i
 <sup>[1]</sup>Sannino, S., Russo, F., Torromino, G., Pendolino, V., Calabresi, P., & De Leonibus, E. (2012). Role of the dorsal hippocampus in object memory load. In Learning &amp; Memory (Vol. 19, Issue 5, pp. 211–218). Cold Spring Harbor Laboratory. https://doi.org/10.1101/lm.025213.111 
 
 # Quick installation and use guide 
-## 1 Requirements and limiting factors
+## 1 Requirements
 
 - So far, the workflow has been tested on **Windows** only.
 
@@ -71,13 +71,21 @@ It requires the *.bin* file and, similarly to the spike one, its output is in *.
 Once you've completed preprocessing the relevant information, you can delve into it using DOT IOT Log Explorer, which is accessible via MATLAB either through AppDesigner or by directly executing the command "DOT_IOT_Log_Explorer" in the command window.
 
 ## 3.1 DOT-IOT Log Explorer
-At the top left, you'll find the *Load* button, allowing you to select the *.txt* table from TINT/Jupyter. Among the check buttons on the right, the most crucial ones during this phase are *LFPs* and *Spikes*, enabling you to choose whether to import this additional information. This is how the graphical user interface (GUI) appears before loading the data.
+At the top left, you'll find the *Load* button, allowing you to select the *.txt* table from TINT/Jupyter. Among the check buttons on the right, the most crucial ones during this phase are *LFPs* and *Spikes*, enabling you to choose whether to import this additional information. Fig. 3.1.a shows the graphical user interface (GUI) before loading the data.
 
-The figure shows an example of the GUI after loading the data. The GUI might be divided in three columns or blocks. The left block contains handles for user control. These involve edit field to select a time window or to determine which behavioral epochs to use. The center block contains plot for data visualization. Going from top to bottom, there are:
+![Fig. 3.1.a](https://i.imgur.com/jODL3vH.png)
+
+***Fig. 3.1.a***
+
+Fig. 3.1.b shows an example of the GUI after loading the data. The GUI might be divided in three columns or blocks. The left block contains handles for user control. These involve edit field to select a time window or to determine which behavioral epochs to use. The center block contains plot for data visualization. Going from top to bottom, there are:
 1) EEG/LFP time series.
 2) Units raster plot.
 3) Behavioral epochs.
 4) Spectrogram.
+
+![Fig. 3.1.b](https://i.imgur.com/nxvrIqL.png)
+
+***Fig. 3.1.b***
 
 The behavioral epochs might be referred to animal speed, object exploration, interaction with a conspecific, stereotypies, sleep epochs, and more. Behavioral epochs are always binarized in terms of *Behavior YES* or *Behavior NO*, according to GUI paramters.
 
@@ -93,7 +101,11 @@ If you have ANY-maze, you can import both coordinates and logged information thr
 
 ### 3.1.2 Exploring single keys
 Once you have perfored your unwinding, you can see what happens to the periodogram, units, and some of the metrics described below, during these behavioral states. With the dropdown menu in the main GUI you can select wheter to join epochs corresponding to all keys, or to browse just a single key. You can consider the first N seconds for each epoch if you want to.
-Last, you can shift the behavioral state vector on the left or right of N seconds. This latter option can be used to adjust delay in logging, or to investigate what just before or after a certain behavior.
+Last, you can shift the behavioral state vector on the left or right of N seconds. This latter option can be used to adjust delay in logging, or to investigate what just before or after a certain behavior. Fig. 3.1.2.a shows the GUI upon loading and selecting manually logged object exploration epochs.
+
+![Fig. 3.1.2.a](https://i.imgur.com/2qP9W6E.png)
+
+***Fig. 3.1.2.a***
 
 ## 3.2 Analysis of movement and sleep patterns
 Bly clicking on the *Movement and sleep* button in the main GUI, a submodule for this analysis is launched.
@@ -107,7 +119,10 @@ The speed time series and the cumulative distance can be segmented into movement
 3) Bursts (sustained high-accelleration epochs)
 
 The movement state segmentation is set with two hard thresholds. With the first one the user can select the minimum cm/s (or cm/s^2 for bursts). The second is minimal duration in seconds.
-The figure shows an example of color coded time series and of a fraction of it.
+Fig. 3.2.1.a shows an example of color coded speed and distance series.
+
+![Fig. 3.2.1.a](https://i.imgur.com/Lq4daLQ.mp4)
+***Fig. 3.2.1.a***
 
 In this section it is also possible to retrieve the arena borders (with some manual refinement) and calculate the tigmotaxis score.
 In addition, metrics related to the head turn angles can be extracted as well both in the whole arena and in the center of it. These metrics might be employed to infer exploration of the open field and some stereotypies.
