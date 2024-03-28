@@ -6,7 +6,7 @@ DOT-IOT Log Explorer was created by Rocco Granata, with inputs from Diletta Cave
 
 ![DOT IOT Log Explorer](https://i.imgur.com/2qP9W6E.png)
 
-The software is made of around 20k lines of custom Python/MATLAB code and leverages compatibility with state-of-the-art computational tools in systems neuroscience. These include [SpikeInterface](https://github.com/SpikeInterface/spikeinterface) (for standardized data extraction), [Kilosort](https://github.com/MouseLand/Kilosort) (for spike sorting), [AccuSleep](https://github.com/zekebarger/AccuSleep) (for semi-automated sleep segmentation), [ANY-maze](https://www.any-maze.com/) (for manual review of behavior through key logs). 
+The software leverages compatibility with state-of-the-art computational tools in systems neuroscience. These include [SpikeInterface](https://github.com/SpikeInterface/spikeinterface) (for standardized data extraction), [Kilosort](https://github.com/MouseLand/Kilosort) (for spike sorting), [AccuSleep](https://github.com/zekebarger/AccuSleep) (for semi-automated sleep segmentation), [ANY-maze](https://www.any-maze.com/) (for manual review of behavior through key logs). 
 
 **Reference**
 
