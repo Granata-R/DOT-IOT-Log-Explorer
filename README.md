@@ -128,7 +128,7 @@ The movement state segmentation is set with two hard thresholds. With the first 
 
 ![Movie 3.2.1.a](https://i.imgur.com/prtLXns.gif)
 
-***Fig. 3.2.1.a***
+***Movie 3.2.1.a***
 
 In this section it is also possible to retrieve the arena borders (with some manual refinement) and calculate the tigmotaxis score (***Fig. 3.2.1.a***).
 
