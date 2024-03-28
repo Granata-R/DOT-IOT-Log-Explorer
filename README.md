@@ -1,8 +1,8 @@
 # DOT-IOT Log Explorer
 
-DOT-IOT Log Explorer is a Python/MATLAB software for broad analysis of electrophysiological data from freely behaving animals. It can be used for visualization and quantitative analysis of spectral properties of electroencephalogram (EEG) and local field potentials (LFPs), movement patterns, sleep patterns, single neuron activity, and phase-amplitude coupling, during specified time windows or behaviorally relevant epochs. 
+DOT-IOT Log Explorer is a Python/MATLAB software for broad analysis of electrophysiological data from freely behaving animals. It can be used for visualization and quantitative analysis of spectral properties of electroencephalogram (EEG) and local field potentials (LFPs), movement patterns, sleep patterns, single neuron activity, and phase-amplitude coupling, during specified time windows and behaviorally relevant epochs. 
 
-DOT-IOT Log Explorer has been created by Rocco Granata, with inputs from Diletta Cavezza, as tailored software for the neuropsychopharmacology laboratory of Dr. Elvira De Leonibus. Originally designed for hippocampal recordings during memory tests, such as the different object task (DOT) and the identical object task (IOT)<sup>[1]</sup>, its versatility allows for potential application in a range of behavioral studies.
+DOT-IOT Log Explorer has been created by Rocco Granata, with inputs from Diletta Cavezza, as tailored software for the neuropsychopharmacology laboratory of Dr. Elvira De Leonibus. Originally designed for an interactive analysis of hippocampal EEG recordings during memory tests, such as the different object task (DOT) and the identical object task (IOT)<sup>[1]</sup>, its versatility allows for potential application in a range of behavioral studies.
 
 ![DOT IOT Log Explorer](https://i.imgur.com/2qP9W6E.png)
 
@@ -12,7 +12,7 @@ DOT-IOT Log Explorer has been created by Rocco Granata, with inputs from Diletta
 
 # Movie
 
-***[This short movie](https://i.imgur.com/tTH4YRX.gif)*** shows an example of interaction with the main graphical user interface (GUI). Several child modules can then be launched from this main GUI, as described in the instruction below.
+***[This short movie](https://i.imgur.com/tTH4YRX.gif)*** demonstrates how to interact with the main graphical user interface (GUI). You can then access various child modules from this main GUI, as explained in the instructions below.
 
 # Quick installation and use guide 
 ## 1 Requirements
