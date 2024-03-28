@@ -1,4 +1,4 @@
-# DOT-IOT Log Explorer
+# <img src="https://i.imgur.com/NY7RYu4.png" width="16" height="28"> DOT-IOT Log Explorer
 
 DOT-IOT Log Explorer is a Python/MATLAB software for broad analysis of electrophysiological data from freely behaving animals. It can be used for visualization and quantitative analysis of spectral properties of electroencephalogram (EEG) and local field potentials (LFPs), movement patterns, sleep patterns, single neuron activity, and phase-amplitude coupling, during specified time windows and behaviorally relevant epochs. 
 
@@ -112,7 +112,7 @@ Last, you can shift the behavioral state vector on the left or right of N second
 
 ***Fig. 3.1.2.a***
 
-## 3.2 Analysis of movement and sleep patterns
+## 3.2 <img src="https://i.imgur.com/RTwNlGx.png" width="16" height="28"> Analysis of movement and sleep patterns
 Bly clicking on the *Movement and sleep* button in the main GUI, a submodule for this analysis is launched.
 
 ### 3.2.1 Movement
@@ -156,7 +156,7 @@ A recent paper by H. Osanai et al, [Extracting electromyographic signals from mu
 If you have the *.bin* recording you can use it for LFP extraction (see **LFP extraction** section), simulate the EMG through the *Sleep* module, and run the automated version of AccuSleep. Note that these functions require the Deep Learning toolbox (see **Requirements**) and have not been tested yet. 
 The quality of the extracted EMG seems to be dependent on the placement of the electrodes. The shallower they are, the better it is for this purpose.
 
-## 3.3 Comodulation module
+## 3.3 <img src="https://i.imgur.com/1DBaLyw.png" width="16" height="28"> Comodulation module
 The comodulation module (***Movie 3.3.a***) allows to calculate some metrics of phase-amplitude coupling (PAC) between the theta and gamma components of source signal.
 Three currently available PAC metrics are:
 1) Mean vector length (MVL)
@@ -182,7 +182,7 @@ This calculation is endowed by a shuffling control, which can be used to generat
 
 On the right panels, you can see the bars showing the mean raw or filtered scores during time window and behavioral epochs, according to main GUI. 
 
-## 3.4 Unit explorer module
+## 3.4 <img src="https://i.imgur.com/yKGFfgk.png" width="16" height="28"> Unit explorer module
 The unit explorer module (still in development) is designed for the analysis of place cell activity. It is possible to plot the spike activity (***Fig. 3.4.a***) in space and compute the distribution of single unit activity.
 
 # 4 Results averaging
@@ -198,7 +198,7 @@ _MOUSEID_TESTID_Channel_Behavior_**[Spg][Mov][Sleep][Pac][Units]**.mat_ will inc
 At the core of the results module there is the idea that the results obtained from main GUIs should be copied and organized in folders. Each folder may contain all the results sharing a particular experimental conditions (e.g., imagine to organize one folder with all animals treated with drug A, and a second folder with all animals treated with drug B. You can compare these two groups in a semi-automated manner). 
 It is advided to do this by copying the files in the *Results* folder, keeping the original output in its place.
 ## 4.2 Using the Results module
-### 4.2.1 Results module
+### 4.2.1 <img src="https://i.imgur.com/tjlWoV3.png" width="16" height="28"> Results module
 For the moment, you can use to perform the following things:
 1) Periodogram averaging and nonparametric tests on desired frequency bands.
 2) Quantification of sleep phases (REM, NREM): how much they last and how much are they scattered.
