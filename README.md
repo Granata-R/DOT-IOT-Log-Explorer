@@ -207,4 +207,4 @@ For the moment, you can use to perform the following things:
 5) Spike analysis.
 
 ## 5 About this guide and credits
-Authored by Rocco Granata on March 28, 2024, this guide offers an overview of the current capabilities of DOT-IOT Log Explorer. While the code remains unreleased, future releases will include detailed instructions on using specific features.
+This short guide has been written by Rocco Granata on March 28th, 2024, with the idea of providing an overview of the current capabilities of DOT-IOT Log Explorer. As of now, the code has not been made available. For further details you can send me an [e-mail](mailto:rocc.granata@gmail.com).
