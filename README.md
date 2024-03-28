@@ -206,6 +206,5 @@ For the moment, you can use to perform the following things:
 4) Comodulation analysis.
 5) Spike analysis.
 
-# About this guide and credits
-This guide has been written by Rocco Granata in March 28th, 2024 to provide a quick overview of what DOT-IOT Log Explorer can do.
-In the future, it will be implemented with more details about how to use specific handles.
+## 5 About this guide and credits
+Authored by Rocco Granata on March 28, 2024, this guide offers an overview of the current capabilities of DOT-IOT Log Explorer. While the code remains unreleased, future releases will include detailed instructions on using specific features.
