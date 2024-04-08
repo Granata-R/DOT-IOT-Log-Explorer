@@ -32,7 +32,7 @@ If not, you can do this by following the official [Mathworks guide for installin
 
    - **Signal Processing Toolbox** (always required);
 
-   - **Statistics and Machine Learning Toolbox** (might be required for certain actions).
+   - **Statistics and Machine Learning Toolbox** (might be required for certain actions);
    
    - **Deep Learning Toolbox** (might be required for certain actions).
 
