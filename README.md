@@ -162,10 +162,8 @@ The quality of the extracted EMG seems to be dependent on the placement of the e
 
 ## 3.3 <img src="https://i.imgur.com/1DBaLyw.png" width="16" height="28"> Comodulation module
 The comodulation module (***Movie 3.3.a***) allows to calculate some metrics of phase-amplitude coupling (PAC) between the theta and gamma components of source signal.
-Three currently available PAC metrics are:
-1) Mean vector length (MVL)
-2) Phase locking value (PLV)
-3) Modulation index (MI)
+Three currently available PAC metrics are mean vector length (MVL), phase locking value (PLV), and modulation index (MI).
+For more information on these methods check the reference<sup>[1]</sup>.
 
 ![Movie 3.3.a](https://i.imgur.com/SYij7E7.gif)
 ***Movie 3.3.a***
@@ -174,6 +172,10 @@ Plus, cross-correlation between theta and gamma can also be calculated.
 
 The PAC can be calculted in different ways, for example by taking into account filtering options like time window and behavior from the main GUI.
 
+**Reference**
+
+<sup>[1]</sup>Hülsemann, M. J., Naumann, E., & Rasch, B. (2019). Quantification of Phase-Amplitude Coupling in Neuronal Oscillations: Comparison of Phase-Locking Value, Mean Vector Length, Modulation Index, and Generalized-Linear-Modeling-Cross-Frequency-Coupling. In Frontiers in Neuroscience (Vol. 13). Frontiers Media SA. https://doi.org/10.3389/fnins.2019.00573 
+   
 ### 3.3.1 Comodulograms
 In the comodulation module it is possible to plot comodulograms (left panel). The comodulogram shows in color code the PAC between different pairs of frequencies. Usually, lower frequency range encompassing theta are on the x axis, and higher frequency range encopassing gamma range is on the y axis.
 
