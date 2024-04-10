@@ -192,7 +192,7 @@ On the right panels, you can see the bars showing the mean raw or filtered score
 ## 3.4 <img src="https://i.imgur.com/yKGFfgk.png" width="16" height="28"> Unit explorer module
 The unit explorer module, still in development, can be used to assess place cell activity and spike distribution during a specified time window and behavior for each unit. The place cell analysis leverages algorithms published in Grieves et al., 2023[1]. Firing rate maps can be obtained by dividing the absolute spike map by the dwell map, which indicates how much time the animal spent in each location.
 
-<img src="https://i.imgur.com/69Qt5ay.png" alt="Fig. 3.4.a" height="521" width="491">
+<img src="https://i.imgur.com/69Qt5ay.png" alt="Fig. 3.4.a">
 
 ***Fig. 3.4.a***
 
@@ -213,7 +213,7 @@ _MOUSEID_TESTID_Channel_Behavior_**[Spg][Mov][Sleep][Pac][Units]**.mat_ will inc
 At the core of the results module there is the idea that the results obtained from main GUIs should be copied and organized in folders. Each folder may contain all the results sharing a particular experimental conditions (e.g., imagine to organize one folder with all animals treated with drug A, and a second folder with all animals treated with drug B. You can compare these two groups in a semi-automated manner). 
 It is advided to do this by copying the files in the *Results* folder, keeping the original output in its place.
 ## 4.2 Using the Results module
-### 4.2.1 <img src="https://i.imgur.com/tjlWoV3.png"> Results module
+### 4.2.1 <img src="https://i.imgur.com/tjlWoV3.png" width="16" height="28"> Results module
 For the moment, you can use to perform the following things:
 1) Periodogram averaging and nonparametric tests on desired frequency bands.
 2) Quantification of sleep phases (REM, NREM): how much they last and how much are they scattered.
