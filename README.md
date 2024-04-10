@@ -183,7 +183,14 @@ This calculation is endowed by a shuffling control, which can be used to generat
 On the right panels, you can see the bars showing the mean raw or filtered scores during time window and behavioral epochs, according to main GUI. 
 
 ## 3.4 <img src="https://i.imgur.com/yKGFfgk.png" width="16" height="28"> Unit explorer module
-The unit explorer module (still in development) is designed for the analysis of place cell activity. It is possible to plot the spike activity (***Fig. 3.4.a***) in space and compute the distribution of single unit activity.
+The unit explorer module, still in development, can be used to assess place cell activity and spike distribution during time window and behavior, for each unit. The place cell analysis leverages algorithms published in Grieves et al., 2023<sup>[1]</sup>. Firing rate maps can be obtained by dividing the absolute spike map with the dwell map (the latter indicating how much the animal dwelled in that location).
+
+<img src="https://i.imgur.com/69Qt5ay.png" alt="Fig. 3.4.a" height="521" width="491">
+
+***Fig. 3.4.a***
+
+**Reference**
+<sup>[1]</sup>Grieves, R. M. (2023). Estimating neuronal firing density: A quantitative analysis of firing rate map algorithms. In D. Bush (Ed.), PLOS Computational Biology (Vol. 19, Issue 12, p. e1011763). Public Library of Science (PLoS). https://doi.org/10.1371/journal.pcbi.1011763
 
 # 4 Results averaging
 The results module has the aim to get all the outputs from single experiments, average them, and perform some simple statistical test. 
