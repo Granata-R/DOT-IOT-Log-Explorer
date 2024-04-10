@@ -139,7 +139,7 @@ In this section it is also possible to retrieve the arena borders (with some man
 In addition, metrics related to the head turn angles can be extracted as well both in the whole arena and in the center of it. These metrics might be employed to infer exploration of the open field and some stereotypies.
 
 ### 3.2.2 Sleep
-In the *Sleep* tab there is a launcher (***Fig. 3.2.2.a***) for an edited version of [**AccuSleep**](https://github.com/zekebarger/AccuSleep).
+In the *Sleep* tab there is a launcher (***Fig. 3.2.2.a***) for an edited version of [**AccuSleep**](https://github.com/zekebarger/AccuSleep)<sup>[1]</sup>.
 AccuSleep is a popular MATLAB software to do automated and manual segmentation into wakefulness and rapid eye movement (REM), and non REM (NREM) sleep, basing on EEG and electromyogram (EMG). It comes already installed in DOT-IOT Log Explorer.
 
 ![Fig. 3.2.2.a](https://i.imgur.com/WtHKDlu.png)
@@ -149,6 +149,10 @@ AccuSleep is a popular MATLAB software to do automated and manual segmentation i
 If you don't have EMG you can use the TINT speed vector to aid yourself in manual sleep segmentation. DOT-IOT Log Explorer can automatedally assign the movement epochs (as defined by the user in the *Movement* tab) to the wakefulness epochs in the AccuSleep GUI. 
 
 Once the data is saved, this edited version generates a *Sleep* folder (in the same folder of the original *.txt* file) where the sleep labels are saved. Thereupon, these labels can be loaded by the main GUI for displaying them and to check, for example, the unit metrics during wakefulness, REM, NREM.
+
+**Reference**
+
+<sup>[1]</sup>Barger, Z., Frye, C. G., Liu, D., Dan, Y., & Bouchard, K. E. (2019). Robust, automated sleep scoring by a compact neural network with distributional shift correction. In G. F. Gilestro (Ed.), PLOS ONE (Vol. 14, Issue 12, p. e0224642). Public Library of Science (PLoS). https://doi.org/10.1371/journal.pone.0224642
 
 **Bonus: what if I want to do the automated segmentation of sleep but I do not have the EMG?**
 A recent paper by H. Osanai et al, [Extracting electromyographic signals from multi-channel LFPs using independent component analysis without direct muscular recording](https://www.cell.com/cell-reports-methods/fulltext/S2667-2375(23)00105-4), showed that it is possible to extract a simulated EMG from LFPs.
