@@ -146,19 +146,20 @@ AccuSleep is a popular MATLAB software to do automated and manual segmentation i
 
 ***Fig. 3.2.2.a***
 
-If you don't have EMG you can use the TINT speed vector to aid yourself in manual sleep segmentation. DOT-IOT Log Explorer can automatedally assign the movement epochs (as defined by the user in the *Movement* tab) to the wakefulness epochs in the AccuSleep GUI. 
+In our workflow, the AccuSleep viewer is used for manual sleep classification not requiring EMG. Mobility epochs, as defined in the **Movement** tab, can be automatically classified as wakefulness. 
 
-Once the data is saved, this edited version generates a *Sleep* folder (in the same folder of the original *.txt* file) where the sleep labels are saved. Thereupon, these labels can be loaded by the main GUI for displaying them and to check, for example, the unit metrics during wakefulness, REM, NREM.
+Once the data is saved, this edited version generates a *Sleep* folder (in the same folder of the original *.txt* file) where the sleep labels are saved. These leep labels can be loaded on the main GUI to analyze what happens during wakefulness, REM, NREM.
 
-**Reference**
+**What if I don't have the EMG?**
+A recent paper by H. Osanai et al<sup>[2]</sup> showed that it is possible to extract a simulated EMG from LFPs.
+If you don't have EMG and are interested in automatic scoring, you can extract the LFPs (see **LFP extraction** section) and simulate the EMG through the *Sleep* module.
+These functions need the Deep Learning toolbox (refer to **Requirements**) and haven't been tested yet. EMG quality appears to rely on electrode placement; shallower placement yields better results.
+
+**References**
 
 <sup>[1]</sup>Barger, Z., Frye, C. G., Liu, D., Dan, Y., & Bouchard, K. E. (2019). Robust, automated sleep scoring by a compact neural network with distributional shift correction. In G. F. Gilestro (Ed.), PLOS ONE (Vol. 14, Issue 12, p. e0224642). Public Library of Science (PLoS). https://doi.org/10.1371/journal.pone.0224642
 
-**Bonus: what if I want to do the automated segmentation of sleep but I do not have the EMG?**
-A recent paper by H. Osanai et al, [Extracting electromyographic signals from multi-channel LFPs using independent component analysis without direct muscular recording](https://www.cell.com/cell-reports-methods/fulltext/S2667-2375(23)00105-4), showed that it is possible to extract a simulated EMG from LFPs.
-
-If you have the *.bin* recording you can use it for LFP extraction (see **LFP extraction** section), simulate the EMG through the *Sleep* module, and run the automated version of AccuSleep. Note that these functions require the Deep Learning toolbox (see **Requirements**) and have not been tested yet. 
-The quality of the extracted EMG seems to be dependent on the placement of the electrodes. The shallower they are, the better it is for this purpose.
+<sup>[2]</sup>Osanai, H., Yamamoto, J., & Kitamura, T. (2023). Extracting electromyographic signals from multi-channel LFPs using independent component analysis without direct muscular recording. In Cell Reports Methods (Vol. 3, Issue 6, p. 100482). Elsevier BV. https://doi.org/10.1016/j.crmeth.2023.100482
 
 ## 3.3 <img src="https://i.imgur.com/1DBaLyw.png" width="16" height="28"> Comodulation module
 The comodulation module (***Movie 3.3.a***) allows to calculate some metrics of phase-amplitude coupling (PAC) between the theta and gamma components of source signal.
