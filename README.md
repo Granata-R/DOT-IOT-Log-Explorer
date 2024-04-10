@@ -148,7 +148,7 @@ AccuSleep is a popular MATLAB software to do automated and manual segmentation i
 
 In our workflow, the AccuSleep viewer is used for manual sleep classification not requiring EMG. Mobility epochs, as defined in the **Movement** tab, can be automatically classified as wakefulness. 
 
-Once the data is saved, this edited version generates a *Sleep* folder (in the same folder of the original *.txt* file) where the sleep labels are saved. These leep labels can be loaded on the main GUI to analyze what happens during wakefulness, REM, NREM.
+The sleep labels can be then loaded on the main GUI and used to analyze what happens during wakefulness, REM, NREM.
 
 **What if I don't have the EMG?**
 A recent paper by H. Osanai et al<sup>[2]</sup> showed that it is possible to extract a simulated EMG from LFPs.
