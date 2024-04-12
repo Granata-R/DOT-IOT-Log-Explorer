@@ -10,7 +10,7 @@ DOT-IOT Log Explorer has been created by Rocco Granata, with inputs from Diletta
 
 <sup>[1]</sup>Sannino, S., Russo, F., Torromino, G., Pendolino, V., Calabresi, P., & De Leonibus, E. (2012). Role of the dorsal hippocampus in object memory load. In Learning &amp; Memory (Vol. 19, Issue 5, pp. 211–218). Cold Spring Harbor Laboratory. https://doi.org/10.1101/lm.025213.111 
 
-# Movie
+# See it in action
 
 ***[This short movie](https://i.imgur.com/tTH4YRX.gif)*** demonstrates how to interact with the main graphical user interface (GUI). You can then access various child modules from this main GUI, as explained in the instructions below.
 
