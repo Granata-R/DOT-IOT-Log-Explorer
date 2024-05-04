@@ -12,7 +12,7 @@ DOT-IOT Log Explorer has been created by Rocco Granata, with inputs from Diletta
 
 # See it in action
 
-***[This short movie](https://i.imgur.com/tTH4YRX.gif)*** demonstrates how to interact with the main graphical user interface (GUI). You can then access various child modules from this main GUI, as explained in the instructions below.
+***[This short animation](https://i.imgur.com/tTH4YRX.gif)*** shows an example of interaction with the main module of graphical user interface (GUI). From it various "child" modules are available (see below).
 
 # Quick installation and use guide 
 ## 1 Requirements
