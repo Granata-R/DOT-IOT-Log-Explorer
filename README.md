@@ -4,7 +4,7 @@ DOT-IOT Log Explorer is a Python/MATLAB software for broad analysis of electroph
 
 DOT-IOT Log Explorer has been created by Rocco Granata, with inputs from Diletta Cavezza, as tailored software for the neuropsychopharmacology laboratory of Dr. Elvira De Leonibus. Originally designed for an interactive analysis of hippocampal EEG recordings during memory tests, such as the different object task (DOT) and the identical object task (IOT)<sup>[1]</sup>, its versatility allows for potential application in a range of behavioral studies.
 
-![DOT IOT Log Explorer](https://i.imgur.com/2qP9W6E.png)
+[![DOT IOT Log Explorer](https://i.imgur.com/2qP9W6E.png)](#)
 
 **Reference**
 
